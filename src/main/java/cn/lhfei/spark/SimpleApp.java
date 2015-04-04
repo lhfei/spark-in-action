@@ -33,14 +33,14 @@ import org.apache.spark.api.java.JavaSparkContext;
 public class SimpleApp {
 
 	public static void main(String[] args) {
-		SparkConf conf = new SparkConf().setAppName("SimpleApp").setMaster("");
+		SparkConf conf = new SparkConf().setAppName("SimpleApp").setMaster("114.80.177.133[*]");
 		
 		JavaSparkContext  sc = new JavaSparkContext (conf);
 		
 		List<Integer> data = Arrays.asList(1, 2, 3, 4, 5);
 		
 		JavaRDD<Integer> distData = sc.parallelize(data);
-		JavaRDD<String> lines = sc.textFile("data.txt");
+		JavaRDD<String> lines = sc.textFile("src/test/resources/data.txt");
 		JavaRDD<Integer> lineLengths = lines.map(s -> s.length());
 		int totalLength = lineLengths.reduce((a, b) -> a + b);
 		
