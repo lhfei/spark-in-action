@@ -27,6 +27,8 @@ import org.apache.spark.streaming.api.java.JavaDStream;
 import org.apache.spark.streaming.api.java.JavaPairDStream;
 import org.apache.spark.streaming.api.java.JavaReceiverInputDStream;
 import org.apache.spark.streaming.api.java.JavaStreamingContext;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import scala.Tuple2;
 
@@ -40,6 +42,7 @@ import scala.Tuple2;
 
 public class StreamingApp {
 
+	private static final Logger log = LoggerFactory.getLogger(StreamingApp.class);
 	
 	public static void main(String[] args) {
 		
@@ -78,7 +81,10 @@ public class StreamingApp {
 		});
 
 		// Print the first ten elements of each RDD generated in this DStream to the console
+		log.info("===================================================");
+		wordCounts.persist();
 		wordCounts.print();
+		log.info("===================================================");
 	}
 
 }
