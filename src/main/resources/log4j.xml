@@ -66,6 +66,15 @@
 		<level value="info" />
 	</logger>	
 	
+	
+	<logger name="org.spark-project.jetty">
+		<level value="info" />
+	</logger>
+	
+	<logger name="io.netty">
+		<level value="info" />
+	</logger>
+	
 	<logger name="org.hibernate">
 		<level value="error" />
 	</logger>
