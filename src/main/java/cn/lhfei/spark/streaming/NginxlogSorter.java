@@ -20,6 +20,7 @@ import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
+import org.apache.spark.api.java.function.Function;
 import org.apache.spark.api.java.function.PairFlatMapFunction;
 import org.apache.spark.api.java.function.PairFunction;
 import org.slf4j.Logger;
@@ -39,34 +40,52 @@ public class NginxlogSorter {
 	protected static Logger log = LoggerFactory.getLogger(BasicSumApp.class);
 	
 	public static void main(String[] args) {
-		SparkConf conf = new SparkConf().setMaster("local").setAppName("NginxlogSorter");
-		
-		JavaSparkContext sc = new JavaSparkContext(conf);
-		
-		
-		JavaRDD<String> lines = sc.textFile("src/test/resources/nginx_report.txt");
-		
-		JavaPairRDD<String, Integer> items = lines.mapToPair(new PairFunction<String, String, Integer>(){
-
-			@Override
-			public Tuple2<String, Integer> call(String s) throws Exception {
-				log.info(s);
-				return null;
-			}
+		JavaSparkContext sc = null;
+		try {
+			SparkConf conf = new SparkConf().setMaster("local").setAppName("NginxlogSorter");
+			conf.set("hadoop.home.dir", "/usr/local/hadoop/hadoop-2.6.0");
 			
-		});
-		
-		lines.flatMapToPair(new PairFlatMapFunction<String, String, Integer>(){
+			sc = new JavaSparkContext(conf);
+			
+			
+			JavaRDD<String> lines = sc.textFile("src/test/resources/nginx_report.txt");
+			
+			lines.map(new Function<String, String>() {
 
-			@Override
-			public Iterable<Tuple2<String, Integer>> call(String t)
-					throws Exception {
+				@Override
+				public String call(String s) throws Exception {
+					log.info(s);
+					return null;
+				}
 				
-				log.info(">>>: {}", t);
-				return null;
-			}
+			});
 			
-		});
+			JavaPairRDD<String, Integer> items = lines.mapToPair(new PairFunction<String, String, Integer>(){
+
+				@Override
+				public Tuple2<String, Integer> call(String s) throws Exception {
+					log.info(s);
+					return null;
+				}
+				
+			});
+			
+			lines.flatMapToPair(new PairFlatMapFunction<String, String, Integer>(){
+
+				@Override
+				public Iterable<Tuple2<String, Integer>> call(String t)
+						throws Exception {
+					
+					log.info(">>>: {}", t);
+					return null;
+				}
+				
+			});
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sc.close();
+		}
 	}
 
 }
