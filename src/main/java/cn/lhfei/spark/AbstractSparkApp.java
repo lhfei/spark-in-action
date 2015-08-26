@@ -17,6 +17,8 @@
 package cn.lhfei.spark;
 
 
+
+
 /**
  * @version 0.1
  *
@@ -26,5 +28,6 @@ package cn.lhfei.spark;
  */
 
 public abstract class AbstractSparkApp {
-
+	
+	protected static final String SPARK_MASTER = "spark://ubuntu144:7077";
 }

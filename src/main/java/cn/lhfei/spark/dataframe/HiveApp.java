@@ -39,6 +39,7 @@ public class HiveApp {
 		
 		HiveContext sqlContext = new org.apache.spark.sql.hive.HiveContext(jsc.sc());
 		
+		sqlContext.sql("");
 	}
 
 }
