@@ -13,9 +13,10 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
-		<hadoop.version>2.6.0</hadoop.version>
+		<hadoop.version>2.7.1</hadoop.version>
 		<spark.version>1.4.1</spark.version>
 		<slf4j.version>1.7.7</slf4j.version>
+		<kafka.version>0.8.2.1</kafka.version>
 	</properties>
 
 	<repositories>
@@ -164,6 +165,16 @@
 			<groupId>org.apache.spark</groupId>
 			<artifactId>spark-network-common_2.11</artifactId>
 			<version>${spark.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.kafka</groupId>
+			<artifactId>kafka_2.11</artifactId>
+			<version>${kafka.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.kafka</groupId>
+			<artifactId>kafka-clients</artifactId>
+			<version>${kafka.version}</version>
 		</dependency>
 	</dependencies>
 

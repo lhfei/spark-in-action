@@ -31,6 +31,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import scala.Tuple2;
+import cn.lhfei.spark.AbstractSparkApp;
 
 /**
  * @version 0.1
@@ -40,7 +41,7 @@ import scala.Tuple2;
  * @since Apr 3, 2015
  */
 
-public class StreamingApp {
+public class StreamingApp extends AbstractSparkApp {
 
 	private static final Logger log = LoggerFactory.getLogger(StreamingApp.class);
 	
@@ -48,7 +49,7 @@ public class StreamingApp {
 		
 		// Create a local StreamingContext with two working thread and batch interval of 1 second
 		SparkConf conf = new SparkConf().setAppName("NetworkWordCount").setMaster("local[2]");
-		JavaStreamingContext jssc = new JavaStreamingContext(conf, Durations.seconds(1));
+		JavaStreamingContext jssc = new JavaStreamingContext(conf, Durations.seconds(5));
 		
 		// Create a DStream that will connect to hostname:port, like localhost:9999
 		JavaReceiverInputDStream<String> lines = jssc.socketTextStream("localhost", 9999);
@@ -82,9 +83,12 @@ public class StreamingApp {
 
 		// Print the first ten elements of each RDD generated in this DStream to the console
 		log.info("===================================================");
-		wordCounts.persist();
+		//wordCounts.persist();
 		wordCounts.print();
 		log.info("===================================================");
+		
+		jssc.start();              // Start the computation
+		jssc.awaitTermination();   // Wait for the computation to terminate
 	}
 
 }
