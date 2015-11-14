@@ -20,6 +20,9 @@ import java.util.Date;
 import java.util.Properties;
 import java.util.Random;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import kafka.javaapi.producer.Producer;
 import kafka.producer.KeyedMessage;
 import kafka.producer.ProducerConfig;
@@ -33,6 +36,8 @@ import kafka.producer.ProducerConfig;
  */
 
 public class CustomPartitionProducer {
+	private static final Logger log = LoggerFactory.getLogger(CustomPartitionProducer.class);
+	
 	private static Producer<String, String> producer;
 
 	public CustomPartitionProducer() {
@@ -66,8 +71,8 @@ public class CustomPartitionProducer {
 		String count = (String) args[1];
 		int messageCount = Integer.parseInt(count);
 
-		System.out.println("Topic Name - " + topic);
-		System.out.println("Message Count - " + messageCount);
+		log.info("Topic Name - {}" ,topic);
+		log.info("Message Count - {}" ,messageCount);
 		CustomPartitionProducer simpleProducer = new CustomPartitionProducer();
 		simpleProducer.publishMessage(topic, messageCount);
 	}
@@ -78,7 +83,7 @@ public class CustomPartitionProducer {
 			String clientIP = "192.168.14." + random.nextInt(255);
 			String accessTime = new Date().toString();
 			String message = accessTime + ",kafka.apache.org," + clientIP;
-			System.out.println(message);
+			log.info(message);
 			// Creates a KeyedMessage instance
 			KeyedMessage<String, String> data = new KeyedMessage<String, String>(
 					topic, clientIP, message);

@@ -71,14 +71,21 @@ public class SimpleHLConsumer {
 				System.out.println("Message from Single Topic :: "
 						+ new String(consumerIte.next().message()));
 		}
-		if (consumer != null)
+		if (consumer != null){
 			consumer.shutdown();
+		}
 	}
 
 	public static void main(String[] args) {
+		//args = new String[]{"vm-10-176-28-230:21818/kafka", "myGroup", "heartbeat_request"};
+		
+		args = new String[]{"centos137.thinker.cn:2181", "myGroup", "test"};
+		
 		String zooKeeper = args[0];
 		String groupId = args[1];
 		String topic = args[2];
+		
+		
 		SimpleHLConsumer simpleHLConsumer = new SimpleHLConsumer(zooKeeper,
 				groupId, topic);
 		simpleHLConsumer.testConsumer();

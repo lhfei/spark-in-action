@@ -19,6 +19,9 @@ package cn.lhfei.spark.kafka.producer;
 import java.util.Date;
 import java.util.Properties;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import kafka.javaapi.producer.Producer;
 import kafka.producer.KeyedMessage;
 import kafka.producer.ProducerConfig;
@@ -33,6 +36,7 @@ import kafka.producer.ProducerConfig;
 
 public class SimpleProducer {
 	private static Producer<String, String> producer;
+	private static final Logger log = LoggerFactory.getLogger(SimpleProducer.class);
 
 	public SimpleProducer() {
 		Properties props = new Properties();
@@ -61,8 +65,8 @@ public class SimpleProducer {
 		String topic = (String) args[0];
 		String count = (String) args[1];
 		int messageCount = Integer.parseInt(count);
-		System.out.println("Topic Name - " + topic);
-		System.out.println("Message Count - " + messageCount);
+		log.info("Topic Name - {}", topic);
+		log.info("Message Count - {}",  messageCount);
 		SimpleProducer simpleProducer = new SimpleProducer();
 		simpleProducer.publishMessage(topic, messageCount);
 	}
@@ -71,7 +75,7 @@ public class SimpleProducer {
 		for (int mCount = 0; mCount < messageCount; mCount++) {
 			String runtime = new Date().toString();
 			String msg = "Message Publishing Time - " + runtime;
-			System.out.println(msg);
+			log.info(msg);
 			// Creates a KeyedMessage instance
 			KeyedMessage<String, String> data = new KeyedMessage<String, String>(
 					topic, msg);

@@ -28,7 +28,6 @@ import kafka.utils.VerifiableProperties;
  */
 
 public class SimplePartitioner implements Partitioner {
-
 	public SimplePartitioner(VerifiableProperties props) {
 	}
 
