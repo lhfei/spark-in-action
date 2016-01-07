@@ -41,7 +41,7 @@ public class HiveThriftClient {
 
 	public static void main(String[] args) {
 		try {
-			TSocket transport = new TSocket("10.154.29.150", 10002);
+			TSocket transport = new TSocket("10.58.62.142", 10003);
 			transport.setTimeout(999999999);
 			TBinaryProtocol protocol = new TBinaryProtocol(transport);
 			

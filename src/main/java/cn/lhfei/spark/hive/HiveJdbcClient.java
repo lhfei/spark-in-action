@@ -13,19 +13,19 @@ public class HiveJdbcClient {
 		try {
 			Class.forName(driverName);
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			System.exit(1);
 		}
-		Connection con = DriverManager.getConnection("jdbc:hive2://10.154.29.150:10002/temp", "", "");
+		Connection con = DriverManager.getConnection("jdbc:hive2://centos10-14.letv.cn:10000/default", "hive", "");
 		Statement stmt = con.createStatement();
 		String tableName = "testHiveDriverTable";
-		stmt.executeQuery("drop table " + tableName);
-		ResultSet res = stmt.executeQuery("create table " + tableName + " (key int, value string)");
+		stmt.execute("drop table if exists " + tableName);
+		stmt.execute("create table if not exists " + tableName + " (key int, value string)");
+
 		// show tables
 		String sql = "show tables '" + tableName + "'";
 		System.out.println("Running: " + sql);
-		res = stmt.executeQuery(sql);
+		ResultSet res = stmt.executeQuery(sql);
 		if (res.next()) {
 			System.out.println(res.getString(1));
 		}
