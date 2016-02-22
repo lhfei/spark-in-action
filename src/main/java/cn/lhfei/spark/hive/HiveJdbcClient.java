@@ -16,14 +16,15 @@ public class HiveJdbcClient {
 			e.printStackTrace();
 			System.exit(1);
 		}
-		Connection con = DriverManager.getConnection("jdbc:hive2://centos10-14.letv.cn:10000/default", "hive", "");
+		Connection con = DriverManager.getConnection("jdbc:hive2://basic.internal.hadoop.10-148-10-14.scloud.letv.com:10000/scloud_phone", "hive", "");
 		Statement stmt = con.createStatement();
-		String tableName = "testHiveDriverTable";
-		stmt.execute("drop table if exists " + tableName);
-		stmt.execute("create table if not exists " + tableName + " (key int, value string)");
+		String tableName = "device_day_metric";
+		//stmt.execute("drop table if exists " + tableName);
+		//stmt.execute("create table if not exists " + tableName + " (key int, value string)");
 
 		// show tables
-		String sql = "show tables '" + tableName + "'";
+		//String sql = "show tables '" + tableName + "'";
+		String sql = "show tables";
 		System.out.println("Running: " + sql);
 		ResultSet res = stmt.executeQuery(sql);
 		if (res.next()) {
