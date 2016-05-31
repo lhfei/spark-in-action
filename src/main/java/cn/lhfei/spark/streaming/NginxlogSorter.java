@@ -16,16 +16,18 @@
 
 package cn.lhfei.spark.streaming;
 
+import java.util.Iterator;
+
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.api.java.function.Function;
-import org.apache.spark.api.java.function.PairFlatMapFunction;
-import org.apache.spark.api.java.function.PairFunction;
+import org.apache.spark.api.java.function.VoidFunction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import cn.lhfei.spark.orm.domain.NginxLog;
 import scala.Tuple2;
 
 /**
@@ -37,50 +39,65 @@ import scala.Tuple2;
  */
 
 public class NginxlogSorter {
-	protected static Logger log = LoggerFactory.getLogger(BasicSumApp.class);
+	protected static Logger log = LoggerFactory.getLogger(NginxlogSorter.class);
 	
 	public static void main(String[] args) {
 		JavaSparkContext sc = null;
 		try {
 			SparkConf conf = new SparkConf().setMaster("local").setAppName("NginxlogSorter");
-			conf.set("hadoop.home.dir", "/usr/local/hadoop/hadoop-2.6.0");
+			//conf.set("hadoop.home.dir", "/usr/hdp/2.4.0.0-169/hadoop");
 			
 			sc = new JavaSparkContext(conf);
 			
 			
 			JavaRDD<String> lines = sc.textFile("src/test/resources/nginx_report.txt");
 			
-			lines.map(new Function<String, String>() {
+			JavaRDD<NginxLog> items = lines.map(new Function<String, NginxLog>(){
+				private static final long serialVersionUID = -1530783780334450383L;
 
 				@Override
-				public String call(String s) throws Exception {
-					log.info(s);
-					return null;
-				}
-				
-			});
-			
-			JavaPairRDD<String, Integer> items = lines.mapToPair(new PairFunction<String, String, Integer>(){
-
-				@Override
-				public Tuple2<String, Integer> call(String s) throws Exception {
-					log.info(s);
-					return null;
-				}
-				
-			});
-			
-			lines.flatMapToPair(new PairFlatMapFunction<String, String, Integer>(){
-
-				@Override
-				public Iterable<Tuple2<String, Integer>> call(String t)
-						throws Exception {
+				public NginxLog call(String v1) throws Exception {
+					NginxLog item = new NginxLog();
+					String[] arrays = v1.split("[\\t]");
 					
-					log.info(">>>: {}", t);
-					return null;
+					if(arrays.length == 3){
+						item.setIp(arrays[0]);
+						item.setLiveTime(Long.parseLong(arrays[1]));
+						item.setAgent(arrays[2]);
+					}
+					return item;
+				}
+			});
+			
+			log.info("=================================Length: [{}]", items.count());
+			
+			JavaPairRDD<String, Iterable<NginxLog>> keyMaps = items.groupBy(new Function<NginxLog, String>(){
+
+				@Override
+				public String call(NginxLog v1) throws Exception {
+					return v1.getIp();
+				}
+			});
+			
+			log.info("=================================Group by Key Length: [{}]", keyMaps.count());
+			
+			keyMaps.foreach(new VoidFunction<Tuple2<String, Iterable<NginxLog>>>(){
+
+				@Override
+				public void call(Tuple2<String, Iterable<NginxLog>> t) throws Exception {
+					log.info("++++++++++++++++++++++++++++++++ key: {}", t._1);
+					
+					Iterator<NginxLog> ts = t._2().iterator();
+					
+					while(ts.hasNext()){
+						log.info("=====================================[{}]",ts.next().toString());
+					}
 				}
 				
 			});
+			
+			keyMaps.saveAsTextFile("src/test/resources/nginx_report-result.txt");
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
