@@ -1,0 +1,5 @@
+bin/spark-submit --class cn.lhfei.spark.rdd.PairRDDDriver /home/cloudland/app_jobs/vdn/spark-in-actioin-1.0.0.jar \
+--master spark://ubuntu144:7077
+
+
+bin/spark-submit --class cn.lhfei.spark.streaming.StreamingApp  /home/cloudland/app_jobs/vdn/spark-in-actioin-1.0.0.jar

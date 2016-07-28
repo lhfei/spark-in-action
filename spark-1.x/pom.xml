@@ -1,21 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
-
+	<parent>
+		<groupId>cn.lhfei.spark</groupId>
+		<artifactId>spark-in-actioin</artifactId>
+		<version>1.0.0</version>
+	</parent>
 	<groupId>cn.lhfei.spark</groupId>
-	<artifactId>spark-in-actioin</artifactId>
+	<artifactId>spark-1.x</artifactId>
 	<version>1.0.0</version>
-	<packaging>pom</packaging>
-
-	<name>spark-in-actioin</name>
+	<name>spark-1.x</name>
 	<url>http://maven.apache.org</url>
+
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>1.8</java.version>
-		<hadoop.version>2.7.2</hadoop.version>
 		<spark.version>1.6.1</spark.version>
-		<slf4j.version>1.7.21</slf4j.version>
 		<kafka.version>0.8.2.2</kafka.version>
 		<hive.version>1.2.1</hive.version>
 		<flume.version>1.6.0</flume.version>
@@ -29,9 +31,26 @@
 	</repositories>
 
 	<dependencies>
-		
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<!--<scope>test</scope> -->
+		</dependency>
+
 		<!-- Logging with SLF4J & LogBack -->
-		
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${slf4j.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+
 		<!-- Hadoop framework -->
 		<dependency>
 			<groupId>org.apache.hadoop</groupId>
@@ -50,54 +69,14 @@
 			<version>1.1.0</version>
 			<classifier>hadoop2</classifier>
 		</dependency>
-				
+
 		<!-- Sprak framework -->
-		<dependency>
-			<groupId>org.apache.spark</groupId>
-			<artifactId>spark-core_2.11</artifactId>
-			<version>${spark.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.spark</groupId>
-			<artifactId>spark-streaming_2.11</artifactId>
-			<version>${spark.version}</version>
-		</dependency>
 		<dependency>
 			<groupId>org.powermock</groupId>
 			<artifactId>powermock-core</artifactId>
 			<version>1.6.2</version>
 		</dependency>
-		<dependency>
-			<groupId>org.apache.spark</groupId>
-			<artifactId>spark-sql_2.11</artifactId>
-			<version>${spark.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.spark</groupId>
-			<artifactId>spark-mllib_2.11</artifactId>
-			<version>${spark.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.spark</groupId>
-			<artifactId>spark-graphx_2.11</artifactId>
-			<version>${spark.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.spark</groupId>
-			<artifactId>spark-hive_2.11</artifactId>
-			<version>${spark.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.spark</groupId>
-			<artifactId>spark-network-common_2.11</artifactId>
-			<version>${spark.version}</version>
-		</dependency>		
-		<dependency>
-			<groupId>org.apache.spark</groupId>
-			<artifactId>spark-network-shuffle_2.11</artifactId>
-			<version>${spark.version}</version>
-		</dependency>
-				
+
 		<!-- Hadoop -->
 		<dependency>
 			<groupId>org.apache.hadoop</groupId>
@@ -148,7 +127,7 @@
 			<version>1.1.0</version>
 			<classifier>hadoop2</classifier>
 		</dependency>
-	
+
 		<!-- Hive -->
 		<dependency>
 			<groupId>org.apache.hive</groupId>
@@ -164,7 +143,7 @@
 			<groupId>org.apache.hive</groupId>
 			<artifactId>hive-exec</artifactId>
 			<version>${hive.version}</version>
-		</dependency>				
+		</dependency>
 		<dependency>
 			<groupId>org.apache.hive</groupId>
 			<artifactId>hive-metastore</artifactId>
@@ -179,7 +158,7 @@
 			<groupId>org.apache.hive</groupId>
 			<artifactId>hive-service</artifactId>
 			<version>${hive.version}</version>
-		</dependency>		
+		</dependency>
 
 		<!-- Kafka -->
 		<dependency>
@@ -192,7 +171,7 @@
 			<artifactId>kafka-clients</artifactId>
 			<version>${kafka.version}</version>
 		</dependency>
-		
+
 		<!-- Thrift -->
 		<dependency>
 			<groupId>org.apache.thrift</groupId>
@@ -212,7 +191,7 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		
+
 		<!-- Flume -->
 		<dependency>
 			<groupId>org.apache.flume</groupId>
@@ -229,7 +208,7 @@
 			<artifactId>flume-ng-configuration</artifactId>
 			<version>${flume.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -259,8 +238,5 @@
 			</plugins>
 		</pluginManagement>
 	</build>
-	<modules>
-		<module>spark-1.x</module>
-    <module>spark-2.x</module>
-  </modules>
+
 </project>
