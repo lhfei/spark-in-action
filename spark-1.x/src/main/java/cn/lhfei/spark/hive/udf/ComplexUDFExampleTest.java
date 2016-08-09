@@ -27,7 +27,6 @@ import org.apache.hadoop.hive.serde2.objectinspector.ObjectInspectorFactory;
 import org.apache.hadoop.hive.serde2.objectinspector.primitive.JavaBooleanObjectInspector;
 import org.apache.hadoop.hive.serde2.objectinspector.primitive.PrimitiveObjectInspectorFactory;
 import org.junit.Assert;
-import org.junit.Test;
 
 /**
  * @version 0.1
@@ -37,8 +36,11 @@ import org.junit.Test;
  * @since Nov 3, 2015
  */
 public class ComplexUDFExampleTest {
+	
+	public static void main(String[] args) {
+		
+	}
 
-	@Test
 	public void testComplexUDFReturnsCorrectValues() throws HiveException {
 
 		// set up the models we need

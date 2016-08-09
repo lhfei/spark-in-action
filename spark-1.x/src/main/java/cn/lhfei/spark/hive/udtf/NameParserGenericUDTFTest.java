@@ -32,8 +32,10 @@ import org.junit.Test;
  */
 
 public class NameParserGenericUDTFTest {
+	public static void main(String[] args) {
+		
+	}
 
-	@Test
 	public void testUDTFOneSpace() {
 
 		// set up the models we need

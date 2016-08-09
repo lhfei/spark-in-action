@@ -1,7 +1,5 @@
 package cn.lhfei.spark.hive;
 
-import java.util.List;
-
 import org.apache.thrift.TException;
 import org.apache.thrift.protocol.TBinaryProtocol;
 import org.apache.thrift.protocol.TProtocol;
