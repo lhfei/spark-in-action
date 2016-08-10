@@ -1,0 +1,24 @@
+#[Spark Jobs](https://github.com/lhfei/spark-in-action.git)
+
+``` 
+```
+Author    |    Email    |    Date     |    Since    |
+----------|-------------|-------------|-------------|
+Hefei Li  |lhfeilaile@gmail.com| Oct. 03, 2016      |     v1.0.0  |
+```
+```
+
+## Jobs
+
+- JavaWordCount
+
+```
+    ./bin/spark-submit \
+    --class org.apache.spark.examples.JavaWordCount \
+    --master local[2] \
+    /home/lhfei/spark_jobs/spark-2.x-1.0.0.jar \
+    /spark-data/data.txt
+      
+```
+
+- 
