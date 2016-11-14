@@ -12,7 +12,7 @@ Hefei Li  |lhfeilaile@gmail.com| Oct. 03, 2016      |     v1.0.0  |
 
 - JavaWordCount
 
-    ```
+    ```bash
     ./bin/spark-submit \
     --class org.apache.spark.examples.JavaWordCount \
     --master local[2] \
