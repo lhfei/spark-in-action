@@ -49,7 +49,12 @@ Hefei Li  |lhfeilaile@gmail.com| Oct. 03, 2016      |     v1.0.0  |
     ```
     ./bin/spark-submit --class cn.lhfei.spark.ml.KMeanApp --master local[1] /home/lhfei/spark_jobs/spark-2.x-1.0.0.jar
     ```
-    
+
+- ML  
+```bash
+./bin/spark-submit --class cn.lhfei.spark.databricks.ml.LinearRegressionApp  --master local[1] --jars /home/lhfei/spark_jobs/spark-2.x-1.*.jar 
+```
+
 
 ```
 val rdd: RDD[Array[String]] = ???

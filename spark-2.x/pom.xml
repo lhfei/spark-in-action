@@ -11,7 +11,7 @@
   <url>http://maven.apache.org</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <spark.version>2.0.0</spark.version>
+    <spark.version>2.0.2</spark.version>
     <scala.version>2.11.8</scala.version>
     <scala.binary.version>2.11</scala.binary.version>
     <PermGen>64m</PermGen>
@@ -84,6 +84,12 @@
       <version>${spark.version}</version>
       <scope>provided</scope>
     </dependency>
+	<dependency>
+    	<groupId>org.apache.spark</groupId>
+    	<artifactId>spark-catalyst_${scala.binary.version}</artifactId>
+    	<version>${spark.version}</version>
+    </dependency>
+    
     <dependency>
       <groupId>org.apache.spark</groupId>
       <artifactId>spark-streaming-kafka-0-8_${scala.binary.version}</artifactId>
@@ -141,6 +147,7 @@
       <artifactId>parquet-hadoop-bundle</artifactId>
       <version>1.6.0</version>
     </dependency>
+
   </dependencies>
   <build>
     <plugins>
