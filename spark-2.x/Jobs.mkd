@@ -56,22 +56,22 @@ Hefei Li  |lhfeilaile@gmail.com| Oct. 03, 2016      |     v1.0.0  |
 ```
 
 
-```
-val rdd: RDD[Array[String]] = ???
-    val rows: RDD[Row] = rdd map {
-      case Array(callId, oCallId, callTime, duration, swId) =>
-        Row(callId.toLong, oCallId.toLong, callTime, duration.toLong, swId.toLong)
-    }
-
-    object schema {
-      val callId = StructField("callId", LongType)
-      val oCallId = StructField("oCallId", StringType)
-      val callTime = StructField("callTime", StringType)
-      val duration = StructField("duration", LongType)
-      val swId = StructField("swId", LongType)
-
-      val struct = StructType(Array(callId, oCallId, callTime, duration, swId))
-    }
-
-    sqlContext.createDataFrame(rows, schema.struct)
-```
+    ```
+    val rdd: RDD[Array[String]] = ???
+        val rows: RDD[Row] = rdd map {
+          case Array(callId, oCallId, callTime, duration, swId) =>
+            Row(callId.toLong, oCallId.toLong, callTime, duration.toLong, swId.toLong)
+        }
+    
+        object schema {
+          val callId = StructField("callId", LongType)
+          val oCallId = StructField("oCallId", StringType)
+          val callTime = StructField("callTime", StringType)
+          val duration = StructField("duration", LongType)
+          val swId = StructField("swId", LongType)
+    
+          val struct = StructType(Array(callId, oCallId, callTime, duration, swId))
+        }
+    
+        sqlContext.createDataFrame(rows, schema.struct)
+    ```
