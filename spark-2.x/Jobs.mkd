@@ -10,6 +10,19 @@ Hefei Li  |lhfeilaile@gmail.com| Oct. 03, 2016      |     v1.0.0  |
 
 ## Jobs
 
+> Spark Streaming
+
+- WordCount
+
+```sh
+./bin/spark-submit \
+--class cn.lhfei.spark.streaming.HdfsWordcount \
+--master local[2] \
+/home/lhfei/spark_jobs/spark-2.x-1.0.0.jar \
+/spark-data/data.txt
+
+```
+
 - JavaWordCount
 
     ```bash
