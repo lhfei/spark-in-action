@@ -59,7 +59,7 @@ public class FirstRDDDriver extends AbstractSparkApp {
 
 		List<Integer> result = even.collect();
 		for(Integer val : result) {
-			log.info("Even Number: >>>>>>>>>>>>>>>>>>>>>>.{}", val);
+			log.info("Even Number: >>>>>>>>>>>>>>>>>>>>>>{}", val);
 		}
 		
 		JavaRDD<Integer> odd = nums.subtract(even);

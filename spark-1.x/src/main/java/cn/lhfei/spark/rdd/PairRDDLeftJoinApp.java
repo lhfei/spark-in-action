@@ -49,8 +49,8 @@ public class PairRDDLeftJoinApp extends AbstractSparkApp{
 		SparkContext sc = new SparkContext(conf);
 		JavaSparkContext jsc = new JavaSparkContext(sc);
 
-		JavaRDD<String> ipRepo = jsc.textFile("src/test/resources/data/IP_REPO_CN.txt").cache();
-		JavaRDD<String> logs = jsc.textFile("src/test/resources/data/IP_LOGS.log").cache();
+		JavaRDD<String> ipRepo = jsc.textFile("spark-1.x/src/test/resources/data/IP_REPO_CN.txt").cache();
+		JavaRDD<String> logs = jsc.textFile("spark-1.x/src/test/resources/data/IP_LOGS.log").cache();
 		
 		JavaPairRDD<String, String> ipRepoPair = ipRepo.mapToPair(new PairFunction<String, String, String>() {
 			@Override
