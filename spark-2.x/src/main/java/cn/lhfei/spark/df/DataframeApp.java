@@ -3,8 +3,6 @@ import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
 
-import groovy.sql.DataSet;
-
 /*
  * Copyright 2010-2011 the original author or authors.
  *
