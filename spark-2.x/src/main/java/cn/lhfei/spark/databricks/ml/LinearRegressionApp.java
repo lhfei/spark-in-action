@@ -43,13 +43,14 @@ public class LinearRegressionApp {
 	
 	public static void main(String[] args) {
 		SparkSession spark = SparkSession.builder()
+				.master("local")
 				.appName("Linear Regression with Single Variable")
 				.getOrCreate();
 		
 		
 		Dataset<Row> training = spark.read().format("com.databricks.spark.csv")
 			.option("header", true).option("inferSchema", "true")
-			.load("/databricks-datasets/samples/population-vs-price/data_geo.csv");
+			.load("spark-2.x/src/test/databricks-datasets/samples/population-vs-price/data_geo.csv");
 		
 		training.cache();
 		

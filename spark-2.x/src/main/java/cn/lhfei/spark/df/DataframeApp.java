@@ -2,7 +2,6 @@ package cn.lhfei.spark.df;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
-
 /*
  * Copyright 2010-2011 the original author or authors.
  *
@@ -29,6 +28,7 @@ public class DataframeApp {
 
 	public static void main(String[] args) {
 		SparkSession spark = SparkSession.builder()
+				.master("local")
 				.appName("Spark Dataframes, Dataset and SQL.")
 				.getOrCreate();
 		

@@ -48,43 +48,31 @@
 			<groupId>org.spark-project.spark</groupId>
 			<artifactId>unused</artifactId>
 			<version>1.0.0</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.spark</groupId>
-			<artifactId>spark-core_${scala.binary.version}</artifactId>
-			<version>${spark.version}</version>
-			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.spark</groupId>
 			<artifactId>spark-streaming_${scala.binary.version}</artifactId>
 			<version>${spark.version}</version>
-			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.spark</groupId>
 			<artifactId>spark-mllib_${scala.binary.version}</artifactId>
 			<version>${spark.version}</version>
-			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.spark</groupId>
 			<artifactId>spark-hive_${scala.binary.version}</artifactId>
 			<version>${spark.version}</version>
-			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.spark</groupId>
 			<artifactId>spark-graphx_${scala.binary.version}</artifactId>
 			<version>${spark.version}</version>
-			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.spark</groupId>
 			<artifactId>spark-streaming-flume_${scala.binary.version}</artifactId>
 			<version>${spark.version}</version>
-			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.spark</groupId>
@@ -96,7 +84,6 @@
 			<groupId>org.apache.spark</groupId>
 			<artifactId>spark-streaming-kafka-0-8_${scala.binary.version}</artifactId>
 			<version>${spark.version}</version>
-			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.scala-lang</groupId>
