@@ -32,12 +32,13 @@ public class JavaLinearRegressionWithElasticNetExample {
     SparkSession spark = SparkSession
       .builder()
       .appName("JavaLinearRegressionWithElasticNetExample")
+      .master("local")
       .getOrCreate();
 
     // $example on$
     // Load training data.
     Dataset<Row> training = spark.read().format("libsvm")
-      .load("data/mllib/sample_linear_regression_data.txt");
+      .load("hdfs://master1.cloud.cn:9000/spark-data/data/mllib/sample_linear_regression_data.txt");
 
     LinearRegression lr = new LinearRegression()
       .setMaxIter(10)

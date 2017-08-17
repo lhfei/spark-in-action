@@ -11,7 +11,7 @@ object KMeanApp {
       .master("local[1]")
       .getOrCreate();
 
-    val dataset = spark.read.format("libsvm").load("/spark-data/data/mllib/sample_kmeans_data.txt")
+    val dataset = spark.read.format("libsvm").load("hdfs://master1.cloud.cn:9000/spark-data/data/mllib/sample_kmeans_data.txt")
 
     // Trains a k-means model.
     val kmeans = new KMeans().setK(2).setSeed(1L)
