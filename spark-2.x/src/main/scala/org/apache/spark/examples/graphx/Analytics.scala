@@ -18,14 +18,14 @@
 // scalastyle:off println
 package org.apache.spark.examples.graphx
 
-import scala.collection.mutable
-
 import org.apache.spark._
-import org.apache.spark.graphx._
 import org.apache.spark.graphx.PartitionStrategy._
+import org.apache.spark.graphx._
 import org.apache.spark.graphx.lib._
 import org.apache.spark.internal.Logging
 import org.apache.spark.storage.StorageLevel
+
+import scala.collection.mutable
 
 /**
  * Driver program for running graph algorithms.

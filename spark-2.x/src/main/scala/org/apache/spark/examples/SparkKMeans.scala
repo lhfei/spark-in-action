@@ -18,8 +18,7 @@
 // scalastyle:off println
 package org.apache.spark.examples
 
-import breeze.linalg.{squaredDistance, DenseVector, Vector}
-
+import breeze.linalg.{DenseVector, Vector, squaredDistance}
 import org.apache.spark.sql.SparkSession
 
 /**

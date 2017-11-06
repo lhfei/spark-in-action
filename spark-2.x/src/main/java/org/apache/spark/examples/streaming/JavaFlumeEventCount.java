@@ -18,8 +18,9 @@
 package org.apache.spark.examples.streaming;
 
 import org.apache.spark.SparkConf;
-import org.apache.spark.streaming.*;
-import org.apache.spark.streaming.api.java.*;
+import org.apache.spark.streaming.Duration;
+import org.apache.spark.streaming.api.java.JavaReceiverInputDStream;
+import org.apache.spark.streaming.api.java.JavaStreamingContext;
 import org.apache.spark.streaming.flume.FlumeUtils;
 import org.apache.spark.streaming.flume.SparkFlumeEvent;
 

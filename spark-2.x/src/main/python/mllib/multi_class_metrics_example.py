@@ -15,13 +15,13 @@
 # limitations under the License.
 #
 
+from pyspark import SparkContext
 # $example on$
 from pyspark.mllib.classification import LogisticRegressionWithLBFGS
-from pyspark.mllib.util import MLUtils
 from pyspark.mllib.evaluation import MulticlassMetrics
-# $example off$
+from pyspark.mllib.util import MLUtils
 
-from pyspark import SparkContext
+# $example off$
 
 if __name__ == "__main__":
     sc = SparkContext(appName="MultiClassMetricsExample")

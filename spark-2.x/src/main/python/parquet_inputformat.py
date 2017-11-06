@@ -1,4 +1,9 @@
 from __future__ import print_function
+
+import sys
+
+from pyspark.sql import SparkSession
+
 #
 # Licensed to the Apache Software Foundation (ASF) under one or more
 # contributor license agreements.  See the NOTICE file distributed with
@@ -15,10 +20,6 @@ from __future__ import print_function
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
-import sys
-
-from pyspark.sql import SparkSession
 
 """
 Read data file users.parquet in local Spark distro:

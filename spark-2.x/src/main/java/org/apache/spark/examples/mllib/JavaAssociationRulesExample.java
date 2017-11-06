@@ -18,16 +18,17 @@
 package org.apache.spark.examples.mllib;
 
 // $example on$
-import java.util.Arrays;
 
+import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.mllib.fpm.AssociationRules;
 import org.apache.spark.mllib.fpm.FPGrowth;
 import org.apache.spark.mllib.fpm.FPGrowth.FreqItemset;
-// $example off$
 
-import org.apache.spark.SparkConf;
+import java.util.Arrays;
+
+// $example off$
 
 public class JavaAssociationRulesExample {
 

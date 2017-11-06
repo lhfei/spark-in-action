@@ -16,15 +16,15 @@
 
 package cn.lhfei.spark.flume;
 
-import java.nio.charset.Charset;
-import java.util.Properties;
-
 import org.apache.flume.Event;
 import org.apache.flume.EventDeliveryException;
 import org.apache.flume.api.RpcClient;
 import org.apache.flume.api.RpcClientConfigurationConstants;
 import org.apache.flume.api.SecureRpcClientFactory;
 import org.apache.flume.event.EventBuilder;
+
+import java.nio.charset.Charset;
+import java.util.Properties;
 
 /**
  * @version 0.1

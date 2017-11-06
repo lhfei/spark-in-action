@@ -20,9 +20,9 @@ Estimator Transformer Param Example.
 """
 from __future__ import print_function
 
+from pyspark.ml.classification import LogisticRegression
 # $example on$
 from pyspark.ml.linalg import Vectors
-from pyspark.ml.classification import LogisticRegression
 # $example off$
 from pyspark.sql import SparkSession
 

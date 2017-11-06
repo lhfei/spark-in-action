@@ -20,9 +20,9 @@ package org.apache.spark.examples
 
 import java.io.File
 
-import scala.io.Source._
-
 import org.apache.spark.sql.SparkSession
+
+import scala.io.Source._
 
 /**
  * Simple test for reading and writing to a distributed

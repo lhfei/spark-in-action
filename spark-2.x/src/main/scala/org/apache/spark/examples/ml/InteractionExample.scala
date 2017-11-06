@@ -19,8 +19,7 @@
 package org.apache.spark.examples.ml
 
 // $example on$
-import org.apache.spark.ml.feature.Interaction
-import org.apache.spark.ml.feature.VectorAssembler
+import org.apache.spark.ml.feature.{Interaction, VectorAssembler}
 // $example off$
 import org.apache.spark.sql.SparkSession
 

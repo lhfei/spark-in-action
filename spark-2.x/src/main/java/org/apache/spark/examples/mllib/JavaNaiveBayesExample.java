@@ -18,7 +18,8 @@
 package org.apache.spark.examples.mllib;
 
 // $example on$
-import scala.Tuple2;
+
+import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
@@ -26,8 +27,9 @@ import org.apache.spark.mllib.classification.NaiveBayes;
 import org.apache.spark.mllib.classification.NaiveBayesModel;
 import org.apache.spark.mllib.regression.LabeledPoint;
 import org.apache.spark.mllib.util.MLUtils;
+import scala.Tuple2;
+
 // $example off$
-import org.apache.spark.SparkConf;
 
 public class JavaNaiveBayesExample {
   public static void main(String[] args) {

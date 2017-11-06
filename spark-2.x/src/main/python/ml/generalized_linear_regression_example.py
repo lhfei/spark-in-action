@@ -17,9 +17,10 @@
 
 from __future__ import print_function
 
-from pyspark.sql import SparkSession
 # $example on$
 from pyspark.ml.regression import GeneralizedLinearRegression
+from pyspark.sql import SparkSession
+
 # $example off$
 
 """

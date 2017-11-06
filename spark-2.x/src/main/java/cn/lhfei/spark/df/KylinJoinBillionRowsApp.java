@@ -1,20 +1,18 @@
 package cn.lhfei.spark.df;
 
-import cn.lhfei.spark.BaseApp;
-import org.apache.spark.api.java.function.Function;
-import org.apache.spark.api.java.function.MapFunction;
-import org.apache.spark.sql.*;
+import cn.lhfei.spark.TopBaseApp;
+import org.apache.spark.sql.AnalysisException;
+import org.apache.spark.sql.Dataset;
+import org.apache.spark.sql.Row;
+import org.apache.spark.sql.SparkSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import scala.collection.immutable.Seq;
-
-import static org.apache.hadoop.yarn.webapp.hamlet.HamletSpec.Scope.row;
 
 
 /**
  * Created by lhfei on 8/29/17.
  */
-public class KylinJoinBillionRowsApp extends BaseApp{
+public class KylinJoinBillionRowsApp extends TopBaseApp {
     private static final Logger LOG = LoggerFactory.getLogger(KylinJoinBillionRowsApp.class);
 
     public static void main(String[] args) throws AnalysisException {

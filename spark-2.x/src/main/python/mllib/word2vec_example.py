@@ -20,6 +20,7 @@ from __future__ import print_function
 from pyspark import SparkContext
 # $example on$
 from pyspark.mllib.feature import Word2Vec
+
 # $example off$
 
 if __name__ == "__main__":

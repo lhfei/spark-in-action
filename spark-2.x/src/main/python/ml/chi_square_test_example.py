@@ -17,10 +17,11 @@
 
 from __future__ import print_function
 
-from pyspark.sql import SparkSession
 # $example on$
 from pyspark.ml.linalg import Vectors
 from pyspark.ml.stat import ChiSquareTest
+from pyspark.sql import SparkSession
+
 # $example off$
 
 """

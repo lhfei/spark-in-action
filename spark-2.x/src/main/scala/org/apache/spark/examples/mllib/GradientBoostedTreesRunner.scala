@@ -18,13 +18,12 @@
 // scalastyle:off println
 package org.apache.spark.examples.mllib
 
-import scopt.OptionParser
-
-import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.mllib.evaluation.MulticlassMetrics
 import org.apache.spark.mllib.tree.GradientBoostedTrees
 import org.apache.spark.mllib.tree.configuration.{Algo, BoostingStrategy}
 import org.apache.spark.util.Utils
+import org.apache.spark.{SparkConf, SparkContext}
+import scopt.OptionParser
 
 /**
  * An example runner for Gradient Boosting using decision trees as weak learners. Run with

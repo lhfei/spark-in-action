@@ -20,10 +20,9 @@ package org.apache.spark.examples
 
 import java.util.Random
 
-import scala.collection.mutable.HashMap
-import scala.collection.mutable.HashSet
+import breeze.linalg.{DenseVector, Vector, squaredDistance}
 
-import breeze.linalg.{squaredDistance, DenseVector, Vector}
+import scala.collection.mutable.{HashMap, HashSet}
 
 /**
  * K-means clustering.

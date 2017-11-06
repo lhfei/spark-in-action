@@ -17,14 +17,11 @@
 package org.apache.spark.examples.sql;
 
 // $example on:typed_custom_aggregation$
-import java.io.Serializable;
 
-import org.apache.spark.sql.Dataset;
-import org.apache.spark.sql.Encoder;
-import org.apache.spark.sql.Encoders;
-import org.apache.spark.sql.SparkSession;
-import org.apache.spark.sql.TypedColumn;
+import org.apache.spark.sql.*;
 import org.apache.spark.sql.expressions.Aggregator;
+
+import java.io.Serializable;
 // $example off:typed_custom_aggregation$
 
 public class JavaUserDefinedTypedAggregation {

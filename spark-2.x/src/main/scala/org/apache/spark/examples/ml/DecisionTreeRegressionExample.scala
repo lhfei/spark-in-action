@@ -22,8 +22,7 @@ package org.apache.spark.examples.ml
 import org.apache.spark.ml.Pipeline
 import org.apache.spark.ml.evaluation.RegressionEvaluator
 import org.apache.spark.ml.feature.VectorIndexer
-import org.apache.spark.ml.regression.DecisionTreeRegressionModel
-import org.apache.spark.ml.regression.DecisionTreeRegressor
+import org.apache.spark.ml.regression.{DecisionTreeRegressionModel, DecisionTreeRegressor}
 // $example off$
 import org.apache.spark.sql.SparkSession
 

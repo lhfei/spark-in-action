@@ -18,10 +18,7 @@
 package org.apache.spark.examples.ml;
 
 // $example on$
-import java.util.Arrays;
-// $example off$
 
-// $example on$
 import org.apache.spark.ml.Pipeline;
 import org.apache.spark.ml.PipelineStage;
 import org.apache.spark.ml.classification.LogisticRegression;
@@ -34,8 +31,13 @@ import org.apache.spark.ml.tuning.CrossValidatorModel;
 import org.apache.spark.ml.tuning.ParamGridBuilder;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
-// $example off$
 import org.apache.spark.sql.SparkSession;
+
+import java.util.Arrays;
+
+// $example off$
+// $example on$
+// $example off$
 
 /**
  * Java example for Model Selection via Cross Validation.

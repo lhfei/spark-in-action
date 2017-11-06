@@ -20,9 +20,9 @@ package org.apache.spark.examples.graphx
 
 import java.io.{FileOutputStream, PrintWriter}
 
-import org.apache.spark.{SparkConf, SparkContext}
-import org.apache.spark.graphx.{GraphXUtils, PartitionStrategy}
 import org.apache.spark.graphx.util.GraphGenerators
+import org.apache.spark.graphx.{GraphXUtils, PartitionStrategy}
+import org.apache.spark.{SparkConf, SparkContext}
 
 /**
  * The SynthBenchmark application can be used to run various GraphX algorithms on

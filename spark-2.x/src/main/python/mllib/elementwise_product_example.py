@@ -21,6 +21,7 @@ from pyspark import SparkContext
 # $example on$
 from pyspark.mllib.feature import ElementwiseProduct
 from pyspark.mllib.linalg import Vectors
+
 # $example off$
 
 if __name__ == "__main__":

@@ -17,18 +17,13 @@
 
 package org.apache.spark.examples;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Random;
-import java.util.Set;
-
-import scala.Tuple2;
-
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.api.java.function.PairFunction;
 import org.apache.spark.sql.SparkSession;
+import scala.Tuple2;
+
+import java.util.*;
 
 /**
  * Transitive closure on a graph, implemented in Java.

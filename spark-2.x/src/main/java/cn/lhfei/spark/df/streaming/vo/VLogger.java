@@ -15,12 +15,11 @@
  */
 package cn.lhfei.spark.df.streaming.vo;
 
-import java.io.Serializable;
-import java.text.SimpleDateFormat;
-
+import cn.lhfei.spark.df.streaming.vlog.VType;
 import org.apache.commons.net.ntp.TimeStamp;
 
-import cn.lhfei.spark.df.streaming.vlog.VType;
+import java.io.Serializable;
+import java.text.SimpleDateFormat;
 
 /**
  * @version 1.0.0

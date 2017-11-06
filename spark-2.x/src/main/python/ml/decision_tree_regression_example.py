@@ -22,9 +22,9 @@ from __future__ import print_function
 
 # $example on$
 from pyspark.ml import Pipeline
-from pyspark.ml.regression import DecisionTreeRegressor
-from pyspark.ml.feature import VectorIndexer
 from pyspark.ml.evaluation import RegressionEvaluator
+from pyspark.ml.feature import VectorIndexer
+from pyspark.ml.regression import DecisionTreeRegressor
 # $example off$
 from pyspark.sql import SparkSession
 

@@ -16,12 +16,11 @@
 
 package cn.lhfei.spark.hive.udtf;
 
-import java.util.ArrayList;
-
 import org.apache.hadoop.hive.serde2.objectinspector.ObjectInspector;
 import org.apache.hadoop.hive.serde2.objectinspector.primitive.PrimitiveObjectInspectorFactory;
 import org.junit.Assert;
-import org.junit.Test;
+
+import java.util.ArrayList;
 
 /**
  * @version 0.1

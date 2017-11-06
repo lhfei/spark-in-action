@@ -19,7 +19,6 @@
 package org.apache.spark.examples
 
 import org.apache.commons.math3.linear._
-
 import org.apache.spark.sql.SparkSession
 
 /**

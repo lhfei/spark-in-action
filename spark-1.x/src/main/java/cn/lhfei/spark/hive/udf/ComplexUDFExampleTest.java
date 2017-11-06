@@ -16,9 +16,6 @@
 
 package cn.lhfei.spark.hive.udf;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.apache.hadoop.hive.ql.metadata.HiveException;
 import org.apache.hadoop.hive.ql.udf.generic.GenericUDF.DeferredJavaObject;
 import org.apache.hadoop.hive.ql.udf.generic.GenericUDF.DeferredObject;
@@ -27,6 +24,9 @@ import org.apache.hadoop.hive.serde2.objectinspector.ObjectInspectorFactory;
 import org.apache.hadoop.hive.serde2.objectinspector.primitive.JavaBooleanObjectInspector;
 import org.apache.hadoop.hive.serde2.objectinspector.primitive.PrimitiveObjectInspectorFactory;
 import org.junit.Assert;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @version 0.1

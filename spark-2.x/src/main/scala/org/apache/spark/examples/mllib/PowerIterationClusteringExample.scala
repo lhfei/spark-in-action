@@ -19,9 +19,8 @@
 package org.apache.spark.examples.mllib
 
 import org.apache.log4j.{Level, Logger}
-import scopt.OptionParser
-
 import org.apache.spark.{SparkConf, SparkContext}
+import scopt.OptionParser
 // $example on$
 import org.apache.spark.mllib.clustering.PowerIterationClustering
 // $example off$

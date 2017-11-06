@@ -19,14 +19,14 @@ package org.apache.spark.examples.mllib;
 
 import com.google.common.collect.ImmutableMap;
 import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaSparkContext;
-
-// $example on$
-import java.util.*;
-
 import scala.Tuple2;
 
-import org.apache.spark.api.java.JavaPairRDD;
+import java.util.Arrays;
+import java.util.List;
+
+// $example on$
 // $example off$
 
 public class JavaStratifiedSamplingExample {

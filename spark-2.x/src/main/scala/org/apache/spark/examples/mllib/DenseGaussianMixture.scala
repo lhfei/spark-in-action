@@ -18,9 +18,9 @@
 // scalastyle:off println
 package org.apache.spark.examples.mllib
 
-import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.mllib.clustering.GaussianMixture
 import org.apache.spark.mllib.linalg.Vectors
+import org.apache.spark.{SparkConf, SparkContext}
 
 /**
  * An example Gaussian Mixture Model EM app. Run with

@@ -17,24 +17,26 @@
 package org.apache.spark.examples.sql;
 
 // $example on:schema_merging$
+
+import org.apache.spark.api.java.function.MapFunction;
+import org.apache.spark.sql.Dataset;
+import org.apache.spark.sql.Encoders;
+import org.apache.spark.sql.Row;
+import org.apache.spark.sql.SparkSession;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-// $example off:schema_merging$
 import java.util.Properties;
 
+// $example off:schema_merging$
 // $example on:basic_parquet_example$
-import org.apache.spark.api.java.function.MapFunction;
-import org.apache.spark.sql.Encoders;
 // $example on:schema_merging$
 // $example on:json_dataset$
-import org.apache.spark.sql.Dataset;
-import org.apache.spark.sql.Row;
 // $example off:json_dataset$
 // $example off:schema_merging$
 // $example off:basic_parquet_example$
-import org.apache.spark.sql.SparkSession;
 
 public class JavaSQLDataSourceExample {
 

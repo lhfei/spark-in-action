@@ -17,19 +17,21 @@
 
 package org.apache.spark.examples.ml;
 
-import org.apache.spark.sql.SparkSession;
-
-// $example on$
-import java.util.Arrays;
-
 import org.apache.spark.ml.feature.VectorAssembler;
 import org.apache.spark.ml.linalg.VectorUDT;
 import org.apache.spark.ml.linalg.Vectors;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.RowFactory;
-import org.apache.spark.sql.types.*;
+import org.apache.spark.sql.SparkSession;
+import org.apache.spark.sql.types.StructField;
+import org.apache.spark.sql.types.StructType;
+
+import java.util.Arrays;
+
 import static org.apache.spark.sql.types.DataTypes.*;
+
+// $example on$
 // $example off$
 
 public class JavaVectorAssemblerExample {

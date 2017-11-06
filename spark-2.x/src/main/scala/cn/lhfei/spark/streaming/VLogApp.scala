@@ -2,16 +2,12 @@ package cn.lhfei.spark.streaming
 
 import java.text.SimpleDateFormat
 
+import cn.lhfei.spark.df.streaming.vlog.VType
+import cn.lhfei.spark.df.streaming.vo.VLogger
 import org.apache.commons.net.ntp.TimeStamp
 import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.SparkSession
-
-import cn.lhfei.spark.df.streaming.vo.VLogger
-import cn.lhfei.spark.df.streaming.vlog.VType
-import org.apache.spark.sql.types.StructType
-import org.apache.spark.sql.types.LongType
-import org.apache.spark.sql.types.StringType
-import org.apache.spark.sql.types.StructField
+import org.apache.spark.sql.types.{StringType, StructField, StructType}
 
 object VLogApp {
 

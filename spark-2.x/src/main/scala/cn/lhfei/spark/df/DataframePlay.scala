@@ -1,12 +1,8 @@
 package cn.lhfei.spark.df
 
-import org.apache.spark.sql.SparkSession
+import org.apache.spark.sql.{Encoder, Row, SparkSession}
 import org.apache.spark.sql.catalyst.encoders.ExpressionEncoder
-import org.apache.spark.sql.types.StringType
-import org.apache.spark.sql.Row
-import org.apache.spark.sql.Encoder
-import org.apache.spark.sql.types.StructType
-import org.apache.spark.sql.types.StructField
+import org.apache.spark.sql.types.{StringType, StructField, StructType}
 
 object DataframePlay {
   case class Person(name: String, age: Long)
@@ -56,6 +52,7 @@ object DataframePlay {
 
   private def convertJson(spark: SparkSession): Unit = {
     import spark.implicits._
+
     import scala.collection.Seq
     
     val caseClassDS = Seq(Person("Andy", 32)).toDS()

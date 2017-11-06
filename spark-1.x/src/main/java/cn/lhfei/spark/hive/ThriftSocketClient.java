@@ -16,25 +16,12 @@
 
 package cn.lhfei.spark.hive;
 
-import java.util.List;
-
-import org.apache.hive.service.cli.thrift.TCLIService;
-import org.apache.hive.service.cli.thrift.TCloseOperationReq;
-import org.apache.hive.service.cli.thrift.TCloseSessionReq;
-import org.apache.hive.service.cli.thrift.TExecuteStatementReq;
-import org.apache.hive.service.cli.thrift.TExecuteStatementResp;
-import org.apache.hive.service.cli.thrift.TFetchOrientation;
-import org.apache.hive.service.cli.thrift.TFetchResultsReq;
-import org.apache.hive.service.cli.thrift.TFetchResultsResp;
-import org.apache.hive.service.cli.thrift.TOpenSessionReq;
-import org.apache.hive.service.cli.thrift.TOpenSessionResp;
-import org.apache.hive.service.cli.thrift.TOperationHandle;
-import org.apache.hive.service.cli.thrift.TRow;
-import org.apache.hive.service.cli.thrift.TRowSet;
-import org.apache.hive.service.cli.thrift.TSessionHandle;
+import org.apache.hive.service.cli.thrift.*;
 import org.apache.thrift.TException;
 import org.apache.thrift.protocol.TBinaryProtocol;
 import org.apache.thrift.transport.TSocket;
+
+import java.util.List;
 
 /**
  * @version 0.1

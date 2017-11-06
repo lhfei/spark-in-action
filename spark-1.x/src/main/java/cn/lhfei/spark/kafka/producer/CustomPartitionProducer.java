@@ -16,16 +16,15 @@
 
 package cn.lhfei.spark.kafka.producer;
 
-import java.util.Date;
-import java.util.Properties;
-import java.util.Random;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import kafka.javaapi.producer.Producer;
 import kafka.producer.KeyedMessage;
 import kafka.producer.ProducerConfig;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.Date;
+import java.util.Properties;
+import java.util.Random;
 
 /**
  * @version 0.1

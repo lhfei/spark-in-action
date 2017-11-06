@@ -4,9 +4,11 @@ Created on Aug 24, 2016
 @author: lihefei
 '''
 
-from numpy import *
 import operator
 from os import listdir
+
+from numpy import *
+
 
 def classify0(inX, dataSet, labels, k):
     dataSetSize = dataSet.shape[0]

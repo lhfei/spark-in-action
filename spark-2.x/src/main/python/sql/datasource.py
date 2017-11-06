@@ -17,9 +17,10 @@
 
 from __future__ import print_function
 
-from pyspark.sql import SparkSession
 # $example on:schema_merging$
 from pyspark.sql import Row
+from pyspark.sql import SparkSession
+
 # $example off:schema_merging$
 
 """

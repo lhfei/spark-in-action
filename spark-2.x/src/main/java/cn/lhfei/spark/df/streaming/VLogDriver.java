@@ -15,24 +15,21 @@
  */
 package cn.lhfei.spark.df.streaming;
 
-import java.text.SimpleDateFormat;
-import java.util.Iterator;
-import java.util.Map;
-
+import cn.lhfei.spark.df.streaming.vlog.VType;
+import cn.lhfei.spark.df.streaming.vo.VLogger;
 import org.apache.commons.net.ntp.TimeStamp;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.api.java.function.Function;
-import org.apache.spark.api.java.function.VoidFunction;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
 
-import cn.lhfei.spark.df.streaming.vlog.VType;
-import cn.lhfei.spark.df.streaming.vo.VLogger;
-import scala.Tuple2;
+import java.text.SimpleDateFormat;
+import java.util.Iterator;
+import java.util.Map;
 
 /**
  * @version 1.0.0

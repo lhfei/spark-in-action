@@ -16,8 +16,6 @@
 
 package cn.lhfei.spark.hive;
 
-import java.util.List;
-
 import org.apache.hadoop.hive.service.HiveServerException;
 import org.apache.hadoop.hive.service.ThriftHive;
 import org.apache.hadoop.hive.service.ThriftHive.Client;
@@ -27,6 +25,8 @@ import org.apache.thrift.transport.TSocket;
 import org.apache.thrift.transport.TTransportException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.List;
 
 /**
  * @version 0.1

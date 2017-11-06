@@ -19,9 +19,9 @@ from __future__ import print_function
 
 # $example on$
 from pyspark.ml.clustering import KMeans
-# $example off$
-
 from pyspark.sql import SparkSession
+
+# $example off$
 
 """
 An example demonstrating k-means clustering.

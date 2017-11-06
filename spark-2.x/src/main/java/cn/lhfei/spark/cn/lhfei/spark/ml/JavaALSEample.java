@@ -1,15 +1,13 @@
 package cn.lhfei.spark.cn.lhfei.spark.ml;
 
-import org.apache.spark.sql.SparkSession;
-import scala.Tuple2;
-
-import org.apache.spark.api.java.*;
+import org.apache.spark.SparkConf;
+import org.apache.spark.api.java.JavaPairRDD;
+import org.apache.spark.api.java.JavaRDD;
+import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.mllib.recommendation.ALS;
 import org.apache.spark.mllib.recommendation.MatrixFactorizationModel;
 import org.apache.spark.mllib.recommendation.Rating;
-import org.apache.spark.SparkConf;
-
-import java.io.Serializable;
+import scala.Tuple2;
 
 /**
  * Created by lhfei on 8/17/17.

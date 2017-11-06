@@ -18,9 +18,9 @@
 // scalastyle:off println
 package org.apache.spark.examples
 
-import scala.math.random
-
 import org.apache.spark.sql.SparkSession
+
+import scala.math.random
 
 /** Computes an approximation to pi */
 object SparkPi {

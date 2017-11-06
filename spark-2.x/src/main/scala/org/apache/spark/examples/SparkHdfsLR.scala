@@ -20,11 +20,10 @@ package org.apache.spark.examples
 
 import java.util.Random
 
-import scala.math.exp
-
 import breeze.linalg.{DenseVector, Vector}
-
 import org.apache.spark.sql.SparkSession
+
+import scala.math.exp
 
 /**
  * Logistic regression based classification.

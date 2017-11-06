@@ -22,14 +22,15 @@ from __future__ import print_function
 
 # $example on$
 import sys
-# $example off$
 
 from pyspark import SparkContext
-from pyspark.streaming import StreamingContext
 # $example on$
 from pyspark.mllib.linalg import Vectors
 from pyspark.mllib.regression import LabeledPoint
 from pyspark.mllib.regression import StreamingLinearRegressionWithSGD
+from pyspark.streaming import StreamingContext
+
+# $example off$
 # $example off$
 
 if __name__ == "__main__":

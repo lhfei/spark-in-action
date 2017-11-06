@@ -25,8 +25,8 @@ import java.nio.charset.StandardCharsets
 import org.apache.spark.SparkConf
 import org.apache.spark.internal.Logging
 import org.apache.spark.storage.StorageLevel
-import org.apache.spark.streaming.{Seconds, StreamingContext}
 import org.apache.spark.streaming.receiver.Receiver
+import org.apache.spark.streaming.{Seconds, StreamingContext}
 
 /**
  * Custom Receiver that receives data over a socket. Received bytes are interpreted as

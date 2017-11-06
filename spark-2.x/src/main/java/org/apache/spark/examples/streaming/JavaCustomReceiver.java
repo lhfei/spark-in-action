@@ -18,7 +18,6 @@
 package org.apache.spark.examples.streaming;
 
 import com.google.common.io.Closeables;
-
 import org.apache.spark.SparkConf;
 import org.apache.spark.storage.StorageLevel;
 import org.apache.spark.streaming.Duration;

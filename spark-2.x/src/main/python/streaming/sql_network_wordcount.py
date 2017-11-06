@@ -32,8 +32,8 @@ from __future__ import print_function
 import sys
 
 from pyspark import SparkContext
-from pyspark.streaming import StreamingContext
 from pyspark.sql import Row, SparkSession
+from pyspark.streaming import StreamingContext
 
 
 def getSparkSessionInstance(sparkConf):

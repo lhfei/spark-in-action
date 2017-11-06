@@ -16,8 +16,7 @@
 
 package cn.lhfei.spark.streaming;
 
-import java.util.Iterator;
-
+import cn.lhfei.spark.orm.domain.NginxLog;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
@@ -26,9 +25,9 @@ import org.apache.spark.api.java.function.Function;
 import org.apache.spark.api.java.function.VoidFunction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import cn.lhfei.spark.orm.domain.NginxLog;
 import scala.Tuple2;
+
+import java.util.Iterator;
 
 /**
  * @version 0.1

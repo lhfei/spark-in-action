@@ -17,11 +17,11 @@
 
 from __future__ import print_function
 
-from pyspark import SparkContext
 # $example on$
 import numpy as np
-
+from pyspark import SparkContext
 from pyspark.mllib.stat import Statistics
+
 # $example off$
 
 if __name__ == "__main__":

@@ -17,17 +17,16 @@
 
 from __future__ import print_function
 
-# $example on:init_session$
-from pyspark.sql import SparkSession
-# $example off:init_session$
-
 # $example on:schema_inferring$
 from pyspark.sql import Row
-# $example off:schema_inferring$
-
+# $example on:init_session$
+from pyspark.sql import SparkSession
 # $example on:programmatic_schema$
 # Import data types
 from pyspark.sql.types import *
+
+# $example off:init_session$
+# $example off:schema_inferring$
 # $example off:programmatic_schema$
 
 """

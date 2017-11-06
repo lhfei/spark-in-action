@@ -23,8 +23,8 @@ from __future__ import print_function
 # $example on$
 from pyspark.ml import Pipeline
 from pyspark.ml.classification import RandomForestClassifier
-from pyspark.ml.feature import IndexToString, StringIndexer, VectorIndexer
 from pyspark.ml.evaluation import MulticlassClassificationEvaluator
+from pyspark.ml.feature import IndexToString, StringIndexer, VectorIndexer
 # $example off$
 from pyspark.sql import SparkSession
 

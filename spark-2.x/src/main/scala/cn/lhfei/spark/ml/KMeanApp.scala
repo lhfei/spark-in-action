@@ -1,7 +1,7 @@
 package cn.lhfei.spark.ml
 
-import org.apache.spark.sql.SparkSession
 import org.apache.spark.ml.clustering.KMeans
+import org.apache.spark.sql.SparkSession
 
 object KMeanApp {
 

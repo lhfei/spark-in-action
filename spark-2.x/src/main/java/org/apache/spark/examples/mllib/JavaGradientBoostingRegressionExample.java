@@ -18,10 +18,6 @@
 package org.apache.spark.examples.mllib;
 
 // $example on$
-import java.util.HashMap;
-import java.util.Map;
-
-import scala.Tuple2;
 
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
@@ -32,6 +28,10 @@ import org.apache.spark.mllib.tree.GradientBoostedTrees;
 import org.apache.spark.mllib.tree.configuration.BoostingStrategy;
 import org.apache.spark.mllib.tree.model.GradientBoostedTreesModel;
 import org.apache.spark.mllib.util.MLUtils;
+import scala.Tuple2;
+
+import java.util.HashMap;
+import java.util.Map;
 // $example off$
 
 public class JavaGradientBoostingRegressionExample {

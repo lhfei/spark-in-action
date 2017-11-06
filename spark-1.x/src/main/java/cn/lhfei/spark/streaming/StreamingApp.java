@@ -16,8 +16,7 @@
 
 package cn.lhfei.spark.streaming;
 
-import java.util.Arrays;
-
+import cn.lhfei.spark.AbstractSparkApp;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.function.FlatMapFunction;
 import org.apache.spark.api.java.function.Function2;
@@ -29,9 +28,9 @@ import org.apache.spark.streaming.api.java.JavaReceiverInputDStream;
 import org.apache.spark.streaming.api.java.JavaStreamingContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import scala.Tuple2;
-import cn.lhfei.spark.AbstractSparkApp;
+
+import java.util.Arrays;
 
 /**
  * @version 0.1

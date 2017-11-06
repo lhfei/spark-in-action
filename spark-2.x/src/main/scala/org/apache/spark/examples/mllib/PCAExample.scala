@@ -18,8 +18,7 @@
 // scalastyle:off println
 package org.apache.spark.examples.mllib
 
-import org.apache.spark.SparkConf
-import org.apache.spark.SparkContext
+import org.apache.spark.{SparkConf, SparkContext}
 // $example on$
 import org.apache.spark.mllib.feature.PCA
 import org.apache.spark.mllib.linalg.Vectors

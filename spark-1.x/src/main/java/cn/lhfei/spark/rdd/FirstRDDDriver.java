@@ -16,9 +16,7 @@
 
 package cn.lhfei.spark.rdd;
 
-import java.util.Arrays;
-import java.util.List;
-
+import cn.lhfei.spark.AbstractSparkApp;
 import org.apache.spark.SparkConf;
 import org.apache.spark.SparkContext;
 import org.apache.spark.api.java.JavaRDD;
@@ -27,7 +25,8 @@ import org.apache.spark.api.java.function.Function;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import cn.lhfei.spark.AbstractSparkApp;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * @version 0.1

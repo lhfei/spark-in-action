@@ -24,6 +24,7 @@ from pyspark import SparkContext
 # $example on$
 from pyspark.mllib.classification import LogisticRegressionWithLBFGS, LogisticRegressionModel
 from pyspark.mllib.regression import LabeledPoint
+
 # $example off$
 
 if __name__ == "__main__":

@@ -22,12 +22,11 @@ import java.io.File
 import java.nio.charset.Charset
 
 import com.google.common.io.Files
-
-import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.broadcast.Broadcast
 import org.apache.spark.rdd.RDD
 import org.apache.spark.streaming.{Seconds, StreamingContext, Time}
 import org.apache.spark.util.{IntParam, LongAccumulator}
+import org.apache.spark.{SparkConf, SparkContext}
 
 /**
  * Use this singleton to get or register a Broadcast variable.

@@ -17,15 +17,15 @@
 
 package org.apache.spark.examples.ml;
 
-import org.apache.spark.sql.SparkSession;
-
-// $example on$
-import java.util.Map;
-
 import org.apache.spark.ml.feature.VectorIndexer;
 import org.apache.spark.ml.feature.VectorIndexerModel;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
+import org.apache.spark.sql.SparkSession;
+
+import java.util.Map;
+
+// $example on$
 // $example off$
 
 public class JavaVectorIndexerExample {

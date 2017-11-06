@@ -21,9 +21,9 @@ from __future__ import print_function
 # $example on$
 from pyspark.ml.feature import BucketedRandomProjectionLSH
 from pyspark.ml.linalg import Vectors
-from pyspark.sql.functions import col
 # $example off$
 from pyspark.sql import SparkSession
+from pyspark.sql.functions import col
 
 """
 An example demonstrating BucketedRandomProjectionLSH.

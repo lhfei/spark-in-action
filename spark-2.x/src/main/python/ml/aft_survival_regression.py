@@ -17,9 +17,9 @@
 
 from __future__ import print_function
 
+from pyspark.ml.linalg import Vectors
 # $example on$
 from pyspark.ml.regression import AFTSurvivalRegression
-from pyspark.ml.linalg import Vectors
 # $example off$
 from pyspark.sql import SparkSession
 

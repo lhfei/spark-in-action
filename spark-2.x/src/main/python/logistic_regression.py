@@ -29,7 +29,6 @@ import sys
 import numpy as np
 from pyspark.sql import SparkSession
 
-
 D = 10  # Number of dimensions
 
 

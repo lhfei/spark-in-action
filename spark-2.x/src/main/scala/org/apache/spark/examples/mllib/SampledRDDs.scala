@@ -18,10 +18,9 @@
 // scalastyle:off println
 package org.apache.spark.examples.mllib
 
-import scopt.OptionParser
-
-import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.mllib.util.MLUtils
+import org.apache.spark.{SparkConf, SparkContext}
+import scopt.OptionParser
 
 /**
  * An example app for randomly generated and sampled RDDs. Run with

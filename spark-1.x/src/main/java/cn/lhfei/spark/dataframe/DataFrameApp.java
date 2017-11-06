@@ -16,8 +16,7 @@
 
 package cn.lhfei.spark.dataframe;
 
-import java.util.List;
-
+import cn.lhfei.spark.orm.domain.Person;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
@@ -28,7 +27,7 @@ import org.apache.spark.sql.SQLContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import cn.lhfei.spark.orm.domain.Person;
+import java.util.List;
 
 /**
  * @version 0.1

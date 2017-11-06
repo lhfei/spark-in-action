@@ -21,9 +21,6 @@ package org.apache.spark.examples.mllib
 import java.util.Locale
 
 import org.apache.log4j.{Level, Logger}
-import scopt.OptionParser
-
-import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.ml.Pipeline
 import org.apache.spark.ml.feature.{CountVectorizer, CountVectorizerModel, RegexTokenizer, StopWordsRemover}
 import org.apache.spark.ml.linalg.{Vector => MLVector}
@@ -31,6 +28,8 @@ import org.apache.spark.mllib.clustering.{DistributedLDAModel, EMLDAOptimizer, L
 import org.apache.spark.mllib.linalg.{Vector, Vectors}
 import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.{Row, SparkSession}
+import org.apache.spark.{SparkConf, SparkContext}
+import scopt.OptionParser
 
 /**
  * An example Latent Dirichlet Allocation (LDA) app. Run with

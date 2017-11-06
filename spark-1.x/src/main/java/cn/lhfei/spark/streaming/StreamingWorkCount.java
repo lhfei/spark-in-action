@@ -1,9 +1,7 @@
 package cn.lhfei.spark.streaming;
 
-import java.util.regex.Pattern;
-
+import cn.lhfei.spark.orm.domain.NginxLog;
 import org.apache.spark.SparkConf;
-import org.apache.spark.api.java.function.FlatMapFunction;
 import org.apache.spark.api.java.function.Function;
 import org.apache.spark.streaming.Durations;
 import org.apache.spark.streaming.api.java.JavaDStream;
@@ -12,7 +10,7 @@ import org.apache.spark.streaming.api.java.JavaStreamingContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import cn.lhfei.spark.orm.domain.NginxLog;
+import java.util.regex.Pattern;
 
 
 public class StreamingWorkCount {

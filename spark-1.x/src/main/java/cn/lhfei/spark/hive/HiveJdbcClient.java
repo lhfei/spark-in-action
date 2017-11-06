@@ -1,10 +1,6 @@
 package cn.lhfei.spark.hive;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class HiveJdbcClient {
 	private static String driverName = "org.apache.hive.jdbc.HiveDriver";

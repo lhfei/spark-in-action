@@ -17,11 +17,11 @@
 
 package org.apache.spark.examples.streaming
 
-import scala.collection.mutable.Queue
-
 import org.apache.spark.SparkConf
 import org.apache.spark.rdd.RDD
 import org.apache.spark.streaming.{Seconds, StreamingContext}
+
+import scala.collection.mutable.Queue
 
 object QueueStream {
 

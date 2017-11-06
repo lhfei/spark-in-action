@@ -16,6 +16,10 @@
 
 package cn.lhfei.spark.rdd;
 
+import cn.lhfei.spark.AbstractSparkApp;
+import cn.lhfei.spark.rdd.tool.VideologFilter;
+import cn.lhfei.spark.rdd.tool.VideologPair;
+import com.google.common.base.Optional;
 import org.apache.spark.SparkConf;
 import org.apache.spark.SparkContext;
 import org.apache.spark.api.java.JavaPairRDD;
@@ -25,13 +29,7 @@ import org.apache.spark.api.java.function.Function;
 import org.apache.spark.api.java.function.PairFunction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import scala.Tuple2;
-import cn.lhfei.spark.AbstractSparkApp;
-import cn.lhfei.spark.rdd.tool.VideologFilter;
-import cn.lhfei.spark.rdd.tool.VideologPair;
-
-import com.google.common.base.Optional;
 
 /**
  * @version 0.1
