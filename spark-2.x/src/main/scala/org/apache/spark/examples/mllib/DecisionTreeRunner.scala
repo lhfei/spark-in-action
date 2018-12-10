@@ -18,19 +18,20 @@
 // scalastyle:off println
 package org.apache.spark.examples.mllib
 
+import scala.language.reflectiveCalls
+
+import scopt.OptionParser
+
+import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.mllib.evaluation.MulticlassMetrics
 import org.apache.spark.mllib.linalg.Vector
 import org.apache.spark.mllib.regression.LabeledPoint
-import org.apache.spark.mllib.tree.configuration.Algo._
+import org.apache.spark.mllib.tree.{impurity, DecisionTree, RandomForest}
 import org.apache.spark.mllib.tree.configuration.{Algo, Strategy}
-import org.apache.spark.mllib.tree.{DecisionTree, RandomForest, impurity}
+import org.apache.spark.mllib.tree.configuration.Algo._
 import org.apache.spark.mllib.util.MLUtils
 import org.apache.spark.rdd.RDD
 import org.apache.spark.util.Utils
-import org.apache.spark.{SparkConf, SparkContext}
-import scopt.OptionParser
-
-import scala.language.reflectiveCalls
 
 /**
  * An example runner for decision trees and random forests. Run with
@@ -210,7 +211,7 @@ object DecisionTreeRunner {
       case Regression =>
         (origExamples, null, 0)
       case _ =>
-        throw new IllegalArgumentException("Algo ${params.algo} not supported.")
+        throw new IllegalArgumentException(s"Algo $algo not supported.")
     }
 
     // Create training, test sets.

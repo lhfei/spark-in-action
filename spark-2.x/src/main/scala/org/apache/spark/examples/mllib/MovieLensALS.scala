@@ -18,13 +18,14 @@
 // scalastyle:off println
 package org.apache.spark.examples.mllib
 
+import scala.collection.mutable
+
 import org.apache.log4j.{Level, Logger}
-import org.apache.spark.mllib.recommendation.{ALS, MatrixFactorizationModel, Rating}
-import org.apache.spark.rdd.RDD
-import org.apache.spark.{SparkConf, SparkContext}
 import scopt.OptionParser
 
-import scala.collection.mutable
+import org.apache.spark.{SparkConf, SparkContext}
+import org.apache.spark.mllib.recommendation.{ALS, MatrixFactorizationModel, Rating}
+import org.apache.spark.rdd.RDD
 
 /**
  * An example app for ALS on MovieLens data (http://grouplens.org/datasets/movielens/).

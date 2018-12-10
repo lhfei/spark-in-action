@@ -18,9 +18,9 @@
 // scalastyle:off println
 package org.apache.spark.examples
 
-import org.apache.spark.sql.SparkSession
-
 import scala.math.random
+
+import org.apache.spark.sql.SparkSession
 
 /** Computes an approximation to pi */
 object SparkPi {
@@ -36,7 +36,7 @@ object SparkPi {
       val y = random * 2 - 1
       if (x*x + y*y <= 1) 1 else 0
     }.reduce(_ + _)
-    println("Pi is roughly " + 4.0 * count / (n - 1))
+    println(s"Pi is roughly ${4.0 * count / (n - 1)}")
     spark.stop()
   }
 }

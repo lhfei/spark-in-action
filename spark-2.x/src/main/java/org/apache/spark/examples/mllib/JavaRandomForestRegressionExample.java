@@ -18,8 +18,11 @@
 package org.apache.spark.examples.mllib;
 
 // $example on$
+import java.util.HashMap;
+import java.util.Map;
 
-import org.apache.spark.SparkConf;
+import scala.Tuple2;
+
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
@@ -27,10 +30,7 @@ import org.apache.spark.mllib.regression.LabeledPoint;
 import org.apache.spark.mllib.tree.RandomForest;
 import org.apache.spark.mllib.tree.model.RandomForestModel;
 import org.apache.spark.mllib.util.MLUtils;
-import scala.Tuple2;
-
-import java.util.HashMap;
-import java.util.Map;
+import org.apache.spark.SparkConf;
 // $example off$
 
 public class JavaRandomForestRegressionExample {

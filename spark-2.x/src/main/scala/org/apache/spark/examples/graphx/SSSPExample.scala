@@ -19,8 +19,8 @@
 package org.apache.spark.examples.graphx
 
 // $example on$
-import org.apache.spark.graphx.util.GraphGenerators
 import org.apache.spark.graphx.{Graph, VertexId}
+import org.apache.spark.graphx.util.GraphGenerators
 // $example off$
 import org.apache.spark.sql.SparkSession
 

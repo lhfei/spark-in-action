@@ -22,7 +22,8 @@ package org.apache.spark.examples.ml
 import org.apache.spark.ml.Pipeline
 import org.apache.spark.ml.evaluation.RegressionEvaluator
 import org.apache.spark.ml.feature.VectorIndexer
-import org.apache.spark.ml.regression.{DecisionTreeRegressionModel, DecisionTreeRegressor}
+import org.apache.spark.ml.regression.DecisionTreeRegressionModel
+import org.apache.spark.ml.regression.DecisionTreeRegressor
 // $example off$
 import org.apache.spark.sql.SparkSession
 
@@ -72,10 +73,10 @@ object DecisionTreeRegressionExample {
       .setPredictionCol("prediction")
       .setMetricName("rmse")
     val rmse = evaluator.evaluate(predictions)
-    println("Root Mean Squared Error (RMSE) on test data = " + rmse)
+    println(s"Root Mean Squared Error (RMSE) on test data = $rmse")
 
     val treeModel = model.stages(1).asInstanceOf[DecisionTreeRegressionModel]
-    println("Learned regression tree model:\n" + treeModel.toDebugString)
+    println(s"Learned regression tree model:\n ${treeModel.toDebugString}")
     // $example off$
 
     spark.stop()

@@ -22,9 +22,8 @@ import org.apache.spark.ml.regression.IsotonicRegression;
 import org.apache.spark.ml.regression.IsotonicRegressionModel;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
-import org.apache.spark.sql.SparkSession;
-
 // $example off$
+import org.apache.spark.sql.SparkSession;
 
 /**
  * An example demonstrating IsotonicRegression.

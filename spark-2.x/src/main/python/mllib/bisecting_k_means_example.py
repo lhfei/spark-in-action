@@ -19,11 +19,11 @@ from __future__ import print_function
 
 # $example on$
 from numpy import array
+# $example off$
+
 from pyspark import SparkContext
 # $example on$
-from pyspark.mllib.clustering import BisectingKMeans
-
-# $example off$
+from pyspark.mllib.clustering import BisectingKMeans, BisectingKMeansModel
 # $example off$
 
 if __name__ == "__main__":

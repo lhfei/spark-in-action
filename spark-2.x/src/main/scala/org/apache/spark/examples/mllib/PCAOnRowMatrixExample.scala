@@ -18,9 +18,11 @@
 // scalastyle:off println
 package org.apache.spark.examples.mllib
 
-import org.apache.spark.{SparkConf, SparkContext}
+import org.apache.spark.SparkConf
+import org.apache.spark.SparkContext
 // $example on$
-import org.apache.spark.mllib.linalg.{Matrix, Vectors}
+import org.apache.spark.mllib.linalg.Matrix
+import org.apache.spark.mllib.linalg.Vectors
 import org.apache.spark.mllib.linalg.distributed.RowMatrix
 // $example off$
 

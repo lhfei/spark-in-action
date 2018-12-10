@@ -18,9 +18,13 @@
 package org.apache.spark.examples.mllib;
 
 // $example on$
+import java.util.Arrays;
+import java.util.List;
+// $example off$
 
 import org.apache.spark.SparkConf;
 import org.apache.spark.SparkContext;
+// $example on$
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.mllib.linalg.Matrix;
@@ -28,12 +32,6 @@ import org.apache.spark.mllib.linalg.SingularValueDecomposition;
 import org.apache.spark.mllib.linalg.Vector;
 import org.apache.spark.mllib.linalg.Vectors;
 import org.apache.spark.mllib.linalg.distributed.RowMatrix;
-
-import java.util.Arrays;
-import java.util.List;
-
-// $example off$
-// $example on$
 // $example off$
 
 /**

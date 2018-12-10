@@ -17,16 +17,18 @@
 
 package org.apache.spark.examples;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Pattern;
+
+import scala.Tuple2;
+
 import com.google.common.collect.Iterables;
+
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.function.Function2;
 import org.apache.spark.sql.SparkSession;
-import scala.Tuple2;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.regex.Pattern;
 
 /**
  * Computes the PageRank of URLs from an input file. Input file should

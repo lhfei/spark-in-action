@@ -18,9 +18,10 @@
 // scalastyle:off println
 package org.apache.spark.examples.mllib
 
-import org.apache.spark.mllib.fpm.FPGrowth
-import org.apache.spark.{SparkConf, SparkContext}
 import scopt.OptionParser
+
+import org.apache.spark.{SparkConf, SparkContext}
+import org.apache.spark.mllib.fpm.FPGrowth
 
 /**
  * Example for mining frequent itemsets using FP-growth.
@@ -73,7 +74,7 @@ object FPGrowthExample {
     println(s"Number of frequent itemsets: ${model.freqItemsets.count()}")
 
     model.freqItemsets.collect().foreach { itemset =>
-      println(itemset.items.mkString("[", ",", "]") + ", " + itemset.freq)
+      println(s"${itemset.items.mkString("[", ",", "]")}, ${itemset.freq}")
     }
 
     sc.stop()

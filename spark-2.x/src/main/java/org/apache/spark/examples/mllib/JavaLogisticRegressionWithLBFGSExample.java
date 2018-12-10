@@ -19,6 +19,10 @@ package org.apache.spark.examples.mllib;
 
 import org.apache.spark.SparkConf;
 import org.apache.spark.SparkContext;
+
+// $example on$
+import scala.Tuple2;
+
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.mllib.classification.LogisticRegressionModel;
@@ -26,9 +30,6 @@ import org.apache.spark.mllib.classification.LogisticRegressionWithLBFGS;
 import org.apache.spark.mllib.evaluation.MulticlassMetrics;
 import org.apache.spark.mllib.regression.LabeledPoint;
 import org.apache.spark.mllib.util.MLUtils;
-import scala.Tuple2;
-
-// $example on$
 // $example off$
 
 /**

@@ -18,7 +18,8 @@
 // scalastyle:off println
 package org.apache.spark.examples.mllib
 
-import org.apache.spark.{SparkConf, SparkContext}
+import org.apache.spark.SparkConf
+import org.apache.spark.SparkContext
 // $example on$
 import org.apache.spark.mllib.feature.Normalizer
 import org.apache.spark.mllib.util.MLUtils

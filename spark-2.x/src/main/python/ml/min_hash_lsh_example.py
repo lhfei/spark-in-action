@@ -15,21 +15,19 @@
 # limitations under the License.
 #
 
-
-from __future__ import print_function
-
-# $example on$
-from pyspark.ml.feature import MinHashLSH
-from pyspark.ml.linalg import Vectors
-# $example off$
-from pyspark.sql import SparkSession
-from pyspark.sql.functions import col
-
 """
 An example demonstrating MinHashLSH.
 Run with:
   bin/spark-submit examples/src/main/python/ml/min_hash_lsh_example.py
 """
+from __future__ import print_function
+
+# $example on$
+from pyspark.ml.feature import MinHashLSH
+from pyspark.ml.linalg import Vectors
+from pyspark.sql.functions import col
+# $example off$
+from pyspark.sql import SparkSession
 
 if __name__ == "__main__":
     spark = SparkSession \

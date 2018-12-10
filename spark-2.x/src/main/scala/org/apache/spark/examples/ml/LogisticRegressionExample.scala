@@ -18,14 +18,15 @@
 // scalastyle:off println
 package org.apache.spark.examples.ml
 
-import org.apache.spark.examples.mllib.AbstractParams
-import org.apache.spark.ml.classification.{LogisticRegression, LogisticRegressionModel}
-import org.apache.spark.ml.feature.StringIndexer
-import org.apache.spark.ml.{Pipeline, PipelineStage}
-import org.apache.spark.sql.{DataFrame, SparkSession}
+import scala.collection.mutable
+
 import scopt.OptionParser
 
-import scala.collection.mutable
+import org.apache.spark.examples.mllib.AbstractParams
+import org.apache.spark.ml.{Pipeline, PipelineStage}
+import org.apache.spark.ml.classification.{LogisticRegression, LogisticRegressionModel}
+import org.apache.spark.ml.feature.StringIndexer
+import org.apache.spark.sql.{DataFrame, SparkSession}
 
 /**
  * An example runner for logistic regression with elastic-net (mixing L1/L2) regularization.

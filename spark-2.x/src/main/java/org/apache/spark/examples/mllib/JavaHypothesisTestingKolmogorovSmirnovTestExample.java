@@ -18,14 +18,13 @@
 package org.apache.spark.examples.mllib;
 
 import org.apache.spark.SparkConf;
-import org.apache.spark.api.java.JavaDoubleRDD;
 import org.apache.spark.api.java.JavaSparkContext;
-import org.apache.spark.mllib.stat.Statistics;
-import org.apache.spark.mllib.stat.test.KolmogorovSmirnovTestResult;
-
+// $example on$
 import java.util.Arrays;
 
-// $example on$
+import org.apache.spark.api.java.JavaDoubleRDD;
+import org.apache.spark.mllib.stat.Statistics;
+import org.apache.spark.mllib.stat.test.KolmogorovSmirnovTestResult;
 // $example off$
 
 public class JavaHypothesisTestingKolmogorovSmirnovTestExample {

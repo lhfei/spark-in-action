@@ -18,19 +18,16 @@
 package org.apache.spark.examples.mllib;
 
 // $example on$
-
-import org.apache.spark.SparkConf;
-import org.apache.spark.api.java.JavaRDD;
-import org.apache.spark.api.java.JavaSparkContext;
-import org.apache.spark.mllib.fpm.PrefixSpan;
-import org.apache.spark.mllib.fpm.PrefixSpanModel;
-
 import java.util.Arrays;
 import java.util.List;
-
 // $example off$
+import org.apache.spark.api.java.JavaRDD;
+import org.apache.spark.api.java.JavaSparkContext;
 // $example on$
+import org.apache.spark.mllib.fpm.PrefixSpan;
+import org.apache.spark.mllib.fpm.PrefixSpanModel;
 // $example off$
+import org.apache.spark.SparkConf;
 
 public class JavaPrefixSpanExample {
 

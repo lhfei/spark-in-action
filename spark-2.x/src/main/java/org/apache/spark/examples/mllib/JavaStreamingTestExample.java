@@ -18,18 +18,16 @@
 package org.apache.spark.examples.mllib;
 
 // $example on$
-
-import org.apache.spark.SparkConf;
 import org.apache.spark.mllib.stat.test.BinarySample;
 import org.apache.spark.mllib.stat.test.StreamingTest;
 import org.apache.spark.mllib.stat.test.StreamingTestResult;
+// $example off$
+import org.apache.spark.SparkConf;
 import org.apache.spark.streaming.Duration;
 import org.apache.spark.streaming.Seconds;
 import org.apache.spark.streaming.api.java.JavaDStream;
 import org.apache.spark.streaming.api.java.JavaStreamingContext;
 import org.apache.spark.util.Utils;
-
-// $example off$
 
 
 /**

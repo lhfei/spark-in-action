@@ -19,8 +19,8 @@
 package org.apache.spark.examples.graphx
 
 // $example on$
-import org.apache.spark.graphx.util.GraphGenerators
 import org.apache.spark.graphx.{Graph, VertexRDD}
+import org.apache.spark.graphx.util.GraphGenerators
 // $example off$
 import org.apache.spark.sql.SparkSession
 
@@ -52,7 +52,7 @@ object AggregateMessagesExample {
       triplet => { // Map Function
         if (triplet.srcAttr > triplet.dstAttr) {
           // Send message to destination vertex containing counter and age
-          triplet.sendToDst(1, triplet.srcAttr)
+          triplet.sendToDst((1, triplet.srcAttr))
         }
       },
       // Add counter and age

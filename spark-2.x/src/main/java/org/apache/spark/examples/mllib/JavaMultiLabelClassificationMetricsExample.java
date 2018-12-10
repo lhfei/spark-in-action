@@ -18,15 +18,14 @@
 package org.apache.spark.examples.mllib;
 
 // $example on$
-
-import org.apache.spark.SparkConf;
-import org.apache.spark.api.java.JavaRDD;
-import org.apache.spark.api.java.JavaSparkContext;
-import org.apache.spark.mllib.evaluation.MultilabelMetrics;
-import scala.Tuple2;
-
 import java.util.Arrays;
 import java.util.List;
+
+import scala.Tuple2;
+
+import org.apache.spark.api.java.*;
+import org.apache.spark.mllib.evaluation.MultilabelMetrics;
+import org.apache.spark.SparkConf;
 // $example off$
 
 public class JavaMultiLabelClassificationMetricsExample {

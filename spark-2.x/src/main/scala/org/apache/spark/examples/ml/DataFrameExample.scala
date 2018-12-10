@@ -20,13 +20,14 @@ package org.apache.spark.examples.ml
 
 import java.io.File
 
+import scopt.OptionParser
+
 import org.apache.spark.examples.mllib.AbstractParams
 import org.apache.spark.ml.linalg.Vector
 import org.apache.spark.mllib.linalg.Vectors
 import org.apache.spark.mllib.stat.MultivariateOnlineSummarizer
 import org.apache.spark.sql.{DataFrame, Row, SparkSession}
 import org.apache.spark.util.Utils
-import scopt.OptionParser
 
 /**
  * An example of how to use [[DataFrame]] for ML. Run with
@@ -46,7 +47,7 @@ object DataFrameExample {
     val parser = new OptionParser[Params]("DataFrameExample") {
       head("DataFrameExample: an example app using DataFrame for ML.")
       opt[String]("input")
-        .text(s"input path to dataframe")
+        .text("input path to dataframe")
         .action((x, c) => c.copy(input = x))
       checkConfig { params =>
         success
@@ -92,7 +93,7 @@ object DataFrameExample {
     // Load the records back.
     println(s"Loading Parquet file with UDT from $outputDir.")
     val newDF = spark.read.parquet(outputDir)
-    println(s"Schema from Parquet:")
+    println("Schema from Parquet:")
     newDF.printSchema()
 
     spark.stop()

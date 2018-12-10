@@ -17,19 +17,19 @@
 
 package org.apache.spark.examples.streaming;
 
+import java.util.Arrays;
+import java.util.regex.Pattern;
+
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
-import org.apache.spark.api.java.StorageLevels;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
+import org.apache.spark.api.java.StorageLevels;
 import org.apache.spark.streaming.Durations;
 import org.apache.spark.streaming.api.java.JavaDStream;
 import org.apache.spark.streaming.api.java.JavaReceiverInputDStream;
 import org.apache.spark.streaming.api.java.JavaStreamingContext;
-
-import java.util.Arrays;
-import java.util.regex.Pattern;
 
 /**
  * Use DataFrames and SQL to count words in UTF8 encoded, '\n' delimited text received from the

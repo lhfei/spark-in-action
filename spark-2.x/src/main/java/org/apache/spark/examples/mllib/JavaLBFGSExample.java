@@ -18,23 +18,20 @@
 package org.apache.spark.examples.mllib;
 
 // $example on$
+import java.util.Arrays;
 
-import org.apache.spark.SparkConf;
-import org.apache.spark.SparkContext;
-import org.apache.spark.api.java.JavaPairRDD;
-import org.apache.spark.api.java.JavaRDD;
+import scala.Tuple2;
+
+import org.apache.spark.api.java.*;
 import org.apache.spark.mllib.classification.LogisticRegressionModel;
 import org.apache.spark.mllib.evaluation.BinaryClassificationMetrics;
 import org.apache.spark.mllib.linalg.Vector;
 import org.apache.spark.mllib.linalg.Vectors;
-import org.apache.spark.mllib.optimization.LBFGS;
-import org.apache.spark.mllib.optimization.LogisticGradient;
-import org.apache.spark.mllib.optimization.SquaredL2Updater;
+import org.apache.spark.mllib.optimization.*;
 import org.apache.spark.mllib.regression.LabeledPoint;
 import org.apache.spark.mllib.util.MLUtils;
-import scala.Tuple2;
-
-import java.util.Arrays;
+import org.apache.spark.SparkConf;
+import org.apache.spark.SparkContext;
 // $example off$
 
 public class JavaLBFGSExample {

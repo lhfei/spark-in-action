@@ -15,10 +15,10 @@
 # limitations under the License.
 #
 
-# $example off$
-from pyspark import SparkContext
 # $example on$
 from pyspark.mllib.fpm import FPGrowth
+# $example off$
+from pyspark import SparkContext
 
 if __name__ == "__main__":
     sc = SparkContext(appName="FPGrowth")

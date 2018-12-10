@@ -15,19 +15,18 @@
 # limitations under the License.
 #
 
-from __future__ import print_function
-
-from pyspark.ml.linalg import Vectors
-# $example on$
-from pyspark.ml.regression import AFTSurvivalRegression
-# $example off$
-from pyspark.sql import SparkSession
-
 """
 An example demonstrating aft survival regression.
 Run with:
   bin/spark-submit examples/src/main/python/ml/aft_survival_regression.py
 """
+from __future__ import print_function
+
+# $example on$
+from pyspark.ml.regression import AFTSurvivalRegression
+from pyspark.ml.linalg import Vectors
+# $example off$
+from pyspark.sql import SparkSession
 
 if __name__ == "__main__":
     spark = SparkSession \

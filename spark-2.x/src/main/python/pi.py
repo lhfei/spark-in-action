@@ -1,11 +1,3 @@
-from __future__ import print_function
-
-import sys
-from operator import add
-from random import random
-
-from pyspark.sql import SparkSession
-
 #
 # Licensed to the Apache Software Foundation (ASF) under one or more
 # contributor license agreements.  See the NOTICE file distributed with
@@ -22,6 +14,14 @@ from pyspark.sql import SparkSession
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
+from __future__ import print_function
+
+import sys
+from random import random
+from operator import add
+
+from pyspark.sql import SparkSession
 
 
 if __name__ == "__main__":

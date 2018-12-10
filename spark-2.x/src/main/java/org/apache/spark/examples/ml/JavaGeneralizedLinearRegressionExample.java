@@ -18,17 +18,15 @@
 package org.apache.spark.examples.ml;
 
 // $example on$
+import java.util.Arrays;
 
 import org.apache.spark.ml.regression.GeneralizedLinearRegression;
 import org.apache.spark.ml.regression.GeneralizedLinearRegressionModel;
 import org.apache.spark.ml.regression.GeneralizedLinearRegressionTrainingSummary;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
-import org.apache.spark.sql.SparkSession;
-
-import java.util.Arrays;
-
 // $example off$
+import org.apache.spark.sql.SparkSession;
 
 /**
  * An example demonstrating generalized linear regression.

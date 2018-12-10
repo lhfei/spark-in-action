@@ -19,18 +19,14 @@ package org.apache.spark.examples.sql.streaming;
 import org.apache.spark.api.java.function.FlatMapFunction;
 import org.apache.spark.api.java.function.MapFunction;
 import org.apache.spark.api.java.function.MapGroupsWithStateFunction;
-import org.apache.spark.sql.Dataset;
-import org.apache.spark.sql.Encoders;
-import org.apache.spark.sql.Row;
-import org.apache.spark.sql.SparkSession;
+import org.apache.spark.sql.*;
 import org.apache.spark.sql.streaming.GroupState;
 import org.apache.spark.sql.streaming.GroupStateTimeout;
 import org.apache.spark.sql.streaming.StreamingQuery;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.*;
 
 /**
  * Counts words in UTF8 encoded, '\n' delimited text received from the network.
@@ -73,7 +69,7 @@ public final class JavaStructuredSessionization {
     FlatMapFunction<LineWithTimestamp, Event> linesToEvents =
       new FlatMapFunction<LineWithTimestamp, Event>() {
         @Override
-        public Iterator<Event> call(LineWithTimestamp lineWithTimestamp) throws Exception {
+        public Iterator<Event> call(LineWithTimestamp lineWithTimestamp) {
           ArrayList<Event> eventList = new ArrayList<Event>();
           for (String word : lineWithTimestamp.getLine().split(" ")) {
             eventList.add(new Event(word, lineWithTimestamp.getTimestamp()));
@@ -95,8 +91,7 @@ public final class JavaStructuredSessionization {
     MapGroupsWithStateFunction<String, Event, SessionInfo, SessionUpdate> stateUpdateFunc =
       new MapGroupsWithStateFunction<String, Event, SessionInfo, SessionUpdate>() {
         @Override public SessionUpdate call(
-            String sessionId, Iterator<Event> events, GroupState<SessionInfo> state)
-              throws Exception {
+            String sessionId, Iterator<Event> events, GroupState<SessionInfo> state) {
           // If timed out, then remove session and send final update
           if (state.hasTimedOut()) {
             SessionUpdate finalUpdate = new SessionUpdate(
@@ -142,7 +137,7 @@ public final class JavaStructuredSessionization {
     Dataset<SessionUpdate> sessionUpdates = events
         .groupByKey(
             new MapFunction<Event, String>() {
-              @Override public String call(Event event) throws Exception {
+              @Override public String call(Event event) {
                 return event.getSessionId();
               }
             }, Encoders.STRING())

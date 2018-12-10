@@ -18,6 +18,7 @@
 package org.apache.spark.examples.ml;
 
 // $example on$
+import java.util.Arrays;
 
 import org.apache.spark.ml.Pipeline;
 import org.apache.spark.ml.PipelineModel;
@@ -27,11 +28,8 @@ import org.apache.spark.ml.feature.HashingTF;
 import org.apache.spark.ml.feature.Tokenizer;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
-import org.apache.spark.sql.SparkSession;
-
-import java.util.Arrays;
-
 // $example off$
+import org.apache.spark.sql.SparkSession;
 
 /**
  * Java example for simple text document 'Pipeline'.

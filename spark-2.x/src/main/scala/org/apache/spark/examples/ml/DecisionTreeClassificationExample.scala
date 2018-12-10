@@ -20,7 +20,8 @@ package org.apache.spark.examples.ml
 
 // $example on$
 import org.apache.spark.ml.Pipeline
-import org.apache.spark.ml.classification.{DecisionTreeClassificationModel, DecisionTreeClassifier}
+import org.apache.spark.ml.classification.DecisionTreeClassificationModel
+import org.apache.spark.ml.classification.DecisionTreeClassifier
 import org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator
 import org.apache.spark.ml.feature.{IndexToString, StringIndexer, VectorIndexer}
 // $example off$
@@ -82,10 +83,10 @@ object DecisionTreeClassificationExample {
       .setPredictionCol("prediction")
       .setMetricName("accuracy")
     val accuracy = evaluator.evaluate(predictions)
-    println("Test Error = " + (1.0 - accuracy))
+    println(s"Test Error = ${(1.0 - accuracy)}")
 
     val treeModel = model.stages(2).asInstanceOf[DecisionTreeClassificationModel]
-    println("Learned classification tree model:\n" + treeModel.toDebugString)
+    println(s"Learned classification tree model:\n ${treeModel.toDebugString}")
     // $example off$
 
     spark.stop()

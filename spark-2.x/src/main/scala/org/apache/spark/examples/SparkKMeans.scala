@@ -18,7 +18,8 @@
 // scalastyle:off println
 package org.apache.spark.examples
 
-import breeze.linalg.{DenseVector, Vector, squaredDistance}
+import breeze.linalg.{squaredDistance, DenseVector, Vector}
+
 import org.apache.spark.sql.SparkSession
 
 /**
@@ -94,7 +95,7 @@ object SparkKMeans {
       for (newP <- newPoints) {
         kPoints(newP._1) = newP._2
       }
-      println("Finished iteration (delta = " + tempDist + ")")
+      println(s"Finished iteration (delta = $tempDist)")
     }
 
     println("Final centers:")

@@ -18,15 +18,14 @@
 package org.apache.spark.examples.mllib;
 
 import org.apache.spark.SparkConf;
-import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
+// $example on$
+import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.mllib.feature.ChiSqSelector;
 import org.apache.spark.mllib.feature.ChiSqSelectorModel;
 import org.apache.spark.mllib.linalg.Vectors;
 import org.apache.spark.mllib.regression.LabeledPoint;
 import org.apache.spark.mllib.util.MLUtils;
-
-// $example on$
 // $example off$
 
 public class JavaChiSqSelectorExample {

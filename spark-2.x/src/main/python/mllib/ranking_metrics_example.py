@@ -15,11 +15,11 @@
 # limitations under the License.
 #
 
-# $example off$
-from pyspark import SparkContext
-from pyspark.mllib.evaluation import RegressionMetrics
 # $example on$
 from pyspark.mllib.recommendation import ALS, Rating
+from pyspark.mllib.evaluation import RegressionMetrics, RankingMetrics
+# $example off$
+from pyspark import SparkContext
 
 if __name__ == "__main__":
     sc = SparkContext(appName="Ranking Metrics Example")

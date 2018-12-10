@@ -15,12 +15,12 @@
 # limitations under the License.
 #
 # $example on$
-from pyspark import SparkContext
+from pyspark.mllib.regression import LabeledPoint, LinearRegressionWithSGD
 from pyspark.mllib.evaluation import RegressionMetrics
 from pyspark.mllib.linalg import DenseVector
-from pyspark.mllib.regression import LabeledPoint, LinearRegressionWithSGD
-
 # $example off$
+
+from pyspark import SparkContext
 
 if __name__ == "__main__":
     sc = SparkContext(appName="Regression Metrics Example")

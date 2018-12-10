@@ -21,7 +21,6 @@ from pyspark import SparkContext
 # $example on$
 from pyspark.mllib.clustering import LDA, LDAModel
 from pyspark.mllib.linalg import Vectors
-
 # $example off$
 
 if __name__ == "__main__":

@@ -18,16 +18,15 @@
 package org.apache.spark.examples.mllib;
 
 import org.apache.spark.SparkConf;
-import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
+// $example on$
+import java.util.Arrays;
+
+import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.mllib.linalg.Vector;
 import org.apache.spark.mllib.linalg.Vectors;
 import org.apache.spark.mllib.stat.MultivariateStatisticalSummary;
 import org.apache.spark.mllib.stat.Statistics;
-
-import java.util.Arrays;
-
-// $example on$
 // $example off$
 
 public class JavaSummaryStatisticsExample {

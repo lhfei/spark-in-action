@@ -26,8 +26,8 @@ from __future__ import print_function
 import sys
 
 import numpy as np
-from numpy import matrix
 from numpy.random import rand
+from numpy import matrix
 from pyspark.sql import SparkSession
 
 LAMBDA = 0.01   # regularization

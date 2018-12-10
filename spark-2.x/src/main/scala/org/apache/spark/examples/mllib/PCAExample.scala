@@ -18,7 +18,8 @@
 // scalastyle:off println
 package org.apache.spark.examples.mllib
 
-import org.apache.spark.{SparkConf, SparkContext}
+import org.apache.spark.SparkConf
+import org.apache.spark.SparkContext
 // $example on$
 import org.apache.spark.mllib.feature.PCA
 import org.apache.spark.mllib.linalg.Vectors
@@ -64,8 +65,8 @@ object PCAExample {
     val MSE = valuesAndPreds.map { case (v, p) => math.pow((v - p), 2) }.mean()
     val MSE_pca = valuesAndPreds_pca.map { case (v, p) => math.pow((v - p), 2) }.mean()
 
-    println("Mean Squared Error = " + MSE)
-    println("PCA Mean Squared Error = " + MSE_pca)
+    println(s"Mean Squared Error = $MSE")
+    println(s"PCA Mean Squared Error = $MSE_pca")
     // $example off$
 
     sc.stop()

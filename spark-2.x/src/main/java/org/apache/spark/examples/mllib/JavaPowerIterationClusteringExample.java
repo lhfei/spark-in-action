@@ -17,16 +17,16 @@
 
 package org.apache.spark.examples.mllib;
 
+import java.util.Arrays;
+
+import scala.Tuple3;
+
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
+// $example on$
 import org.apache.spark.mllib.clustering.PowerIterationClustering;
 import org.apache.spark.mllib.clustering.PowerIterationClusteringModel;
-import scala.Tuple3;
-
-import java.util.Arrays;
-
-// $example on$
 // $example off$
 
 /**

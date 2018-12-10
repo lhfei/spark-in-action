@@ -18,22 +18,18 @@
 package org.apache.spark.examples.mllib;
 
 // $example on$
+import java.util.*;
 
-import org.apache.spark.SparkConf;
-import org.apache.spark.api.java.JavaPairRDD;
-import org.apache.spark.api.java.JavaRDD;
-import org.apache.spark.api.java.JavaSparkContext;
-import org.apache.spark.mllib.evaluation.RankingMetrics;
+import scala.Tuple2;
+
+import org.apache.spark.api.java.*;
 import org.apache.spark.mllib.evaluation.RegressionMetrics;
+import org.apache.spark.mllib.evaluation.RankingMetrics;
 import org.apache.spark.mllib.recommendation.ALS;
 import org.apache.spark.mllib.recommendation.MatrixFactorizationModel;
 import org.apache.spark.mllib.recommendation.Rating;
-import scala.Tuple2;
-
-import java.util.ArrayList;
-import java.util.List;
-
 // $example off$
+import org.apache.spark.SparkConf;
 
 public class JavaRankingMetricsExample {
   public static void main(String[] args) {

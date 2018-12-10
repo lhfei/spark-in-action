@@ -18,11 +18,10 @@
 package org.apache.spark.examples.ml;
 
 // $example on$
-
-import org.apache.spark.ml.linalg.Vectors;
 import org.apache.spark.ml.regression.LinearRegression;
 import org.apache.spark.ml.regression.LinearRegressionModel;
 import org.apache.spark.ml.regression.LinearRegressionTrainingSummary;
+import org.apache.spark.ml.linalg.Vectors;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
@@ -33,13 +32,12 @@ public class JavaLinearRegressionWithElasticNetExample {
     SparkSession spark = SparkSession
       .builder()
       .appName("JavaLinearRegressionWithElasticNetExample")
-      .master("local")
       .getOrCreate();
 
     // $example on$
     // Load training data.
     Dataset<Row> training = spark.read().format("libsvm")
-      .load("hdfs://master1.cloud.cn:9000/spark-data/data/mllib/sample_linear_regression_data.txt");
+      .load("data/mllib/sample_linear_regression_data.txt");
 
     LinearRegression lr = new LinearRegression()
       .setMaxIter(10)

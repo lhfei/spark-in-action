@@ -18,14 +18,12 @@
 package org.apache.spark.examples.ml;
 
 // $example on$
-
 import org.apache.spark.ml.clustering.GaussianMixture;
 import org.apache.spark.ml.clustering.GaussianMixtureModel;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
-import org.apache.spark.sql.SparkSession;
-
 // $example off$
+import org.apache.spark.sql.SparkSession;
 
 
 /**

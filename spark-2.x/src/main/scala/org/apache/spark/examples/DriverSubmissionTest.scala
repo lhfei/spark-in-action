@@ -18,9 +18,9 @@
 // scalastyle:off println
 package org.apache.spark.examples
 
-import org.apache.spark.util.Utils
-
 import scala.collection.JavaConverters._
+
+import org.apache.spark.util.Utils
 
 /**
  * Prints out environmental information, sleeps, and then exits. Made to

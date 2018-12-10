@@ -18,10 +18,10 @@
 // scalastyle:off println
 package org.apache.spark.examples
 
-import org.apache.spark.sql.SparkSession
-
 import scala.collection.mutable
 import scala.util.Random
+
+import org.apache.spark.sql.SparkSession
 
 /**
  * Transitive closure on a graph.
@@ -68,7 +68,7 @@ object SparkTC {
       nextCount = tc.count()
     } while (nextCount != oldCount)
 
-    println("TC has " + tc.count() + " edges.")
+    println(s"TC has ${tc.count()} edges.")
     spark.stop()
   }
 }

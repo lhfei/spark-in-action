@@ -19,10 +19,10 @@ from __future__ import print_function
 
 # $example on$
 from pyspark.ml.feature import Tokenizer, RegexTokenizer
-# $example off$
-from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, udf
 from pyspark.sql.types import IntegerType
+# $example off$
+from pyspark.sql import SparkSession
 
 if __name__ == "__main__":
     spark = SparkSession\

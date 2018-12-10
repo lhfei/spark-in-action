@@ -17,10 +17,9 @@
 
 from __future__ import print_function
 
-import sys
-import threading
 import time
-
+import threading
+import sys
 if sys.version >= '3':
     import queue as Queue
 else:

@@ -19,14 +19,15 @@ package org.apache.spark.examples.pythonconverters
 
 import java.util.{Collection => JCollection, Map => JMap}
 
+import scala.collection.JavaConverters._
+
 import org.apache.avro.Schema
 import org.apache.avro.Schema.Type._
 import org.apache.avro.generic.{GenericFixed, IndexedRecord}
 import org.apache.avro.mapred.AvroWrapper
+
 import org.apache.spark.SparkException
 import org.apache.spark.api.python.Converter
-
-import scala.collection.JavaConverters._
 
 
 object AvroConversionUtil extends Serializable {

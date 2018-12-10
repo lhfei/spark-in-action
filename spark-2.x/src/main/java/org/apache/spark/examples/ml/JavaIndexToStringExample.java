@@ -17,23 +17,23 @@
 
 package org.apache.spark.examples.ml;
 
+import org.apache.spark.sql.Dataset;
+import org.apache.spark.sql.SparkSession;
+
+// $example on$
+import java.util.Arrays;
+import java.util.List;
+
 import org.apache.spark.ml.attribute.Attribute;
 import org.apache.spark.ml.feature.IndexToString;
 import org.apache.spark.ml.feature.StringIndexer;
 import org.apache.spark.ml.feature.StringIndexerModel;
-import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.RowFactory;
-import org.apache.spark.sql.SparkSession;
 import org.apache.spark.sql.types.DataTypes;
 import org.apache.spark.sql.types.Metadata;
 import org.apache.spark.sql.types.StructField;
 import org.apache.spark.sql.types.StructType;
-
-import java.util.Arrays;
-import java.util.List;
-
-// $example on$
 // $example off$
 
 public class JavaIndexToStringExample {

@@ -17,13 +17,13 @@
 
 package org.apache.spark.examples.ml;
 
+import org.apache.spark.sql.SparkSession;
+
+// $example on$
 import org.apache.spark.ml.feature.StandardScaler;
 import org.apache.spark.ml.feature.StandardScalerModel;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
-import org.apache.spark.sql.SparkSession;
-
-// $example on$
 // $example off$
 
 public class JavaStandardScalerExample {

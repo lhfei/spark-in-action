@@ -20,19 +20,20 @@ package org.apache.spark.examples.ml
 
 import java.util.Locale
 
+import scala.collection.mutable
+
+import scopt.OptionParser
+
 import org.apache.spark.examples.mllib.AbstractParams
+import org.apache.spark.ml.{Pipeline, PipelineStage, Transformer}
 import org.apache.spark.ml.classification.{DecisionTreeClassificationModel, DecisionTreeClassifier}
 import org.apache.spark.ml.feature.{StringIndexer, VectorIndexer}
 import org.apache.spark.ml.linalg.Vector
 import org.apache.spark.ml.regression.{DecisionTreeRegressionModel, DecisionTreeRegressor}
 import org.apache.spark.ml.util.MetadataUtils
-import org.apache.spark.ml.{Pipeline, PipelineStage, Transformer}
 import org.apache.spark.mllib.evaluation.{MulticlassMetrics, RegressionMetrics}
 import org.apache.spark.mllib.util.MLUtils
 import org.apache.spark.sql.{DataFrame, SparkSession}
-import scopt.OptionParser
-
-import scala.collection.mutable
 
 /**
  * An example runner for decision trees. Run with
@@ -250,7 +251,7 @@ object DecisionTreeExample {
           .setMinInfoGain(params.minInfoGain)
           .setCacheNodeIds(params.cacheNodeIds)
           .setCheckpointInterval(params.checkpointInterval)
-      case _ => throw new IllegalArgumentException("Algo ${params.algo} not supported.")
+      case _ => throw new IllegalArgumentException(s"Algo ${params.algo} not supported.")
     }
     stages += dt
     val pipeline = new Pipeline().setStages(stages.toArray)
@@ -277,7 +278,7 @@ object DecisionTreeExample {
         } else {
           println(treeModel) // Print model summary.
         }
-      case _ => throw new IllegalArgumentException("Algo ${params.algo} not supported.")
+      case _ => throw new IllegalArgumentException(s"Algo ${params.algo} not supported.")
     }
 
     // Evaluate model on training, test data.
@@ -293,7 +294,7 @@ object DecisionTreeExample {
         println("Test data results:")
         evaluateRegressionModel(pipelineModel, test, labelColName)
       case _ =>
-        throw new IllegalArgumentException("Algo ${params.algo} not supported.")
+        throw new IllegalArgumentException(s"Algo ${params.algo} not supported.")
     }
 
     spark.stop()

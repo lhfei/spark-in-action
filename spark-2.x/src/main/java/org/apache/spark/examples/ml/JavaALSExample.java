@@ -17,17 +17,17 @@
 
 package org.apache.spark.examples.ml;
 
-import org.apache.spark.api.java.JavaRDD;
-import org.apache.spark.ml.evaluation.RegressionEvaluator;
-import org.apache.spark.ml.recommendation.ALS;
-import org.apache.spark.ml.recommendation.ALSModel;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
 
+// $example on$
 import java.io.Serializable;
 
-// $example on$
+import org.apache.spark.api.java.JavaRDD;
+import org.apache.spark.ml.evaluation.RegressionEvaluator;
+import org.apache.spark.ml.recommendation.ALS;
+import org.apache.spark.ml.recommendation.ALSModel;
 // $example off$
 
 public class JavaALSExample {
@@ -81,13 +81,12 @@ public class JavaALSExample {
   public static void main(String[] args) {
     SparkSession spark = SparkSession
       .builder()
-      .master("local")
       .appName("JavaALSExample")
       .getOrCreate();
 
     // $example on$
     JavaRDD<Rating> ratingsRDD = spark
-      .read().textFile("hdfs://master1.cloud.cn:9000/spark-data/data/mllib/als/sample_movielens_ratings.txt").javaRDD()
+      .read().textFile("data/mllib/als/sample_movielens_ratings.txt").javaRDD()
       .map(Rating::parseRating);
     Dataset<Row> ratings = spark.createDataFrame(ratingsRDD, Rating.class);
     Dataset<Row>[] splits = ratings.randomSplit(new double[]{0.8, 0.2});
@@ -119,9 +118,18 @@ public class JavaALSExample {
     Dataset<Row> userRecs = model.recommendForAllUsers(10);
     // Generate top 10 user recommendations for each movie
     Dataset<Row> movieRecs = model.recommendForAllItems(10);
+
+    // Generate top 10 movie recommendations for a specified set of users
+    Dataset<Row> users = ratings.select(als.getUserCol()).distinct().limit(3);
+    Dataset<Row> userSubsetRecs = model.recommendForUserSubset(users, 10);
+    // Generate top 10 user recommendations for a specified set of movies
+    Dataset<Row> movies = ratings.select(als.getItemCol()).distinct().limit(3);
+    Dataset<Row> movieSubSetRecs = model.recommendForItemSubset(movies, 10);
     // $example off$
     userRecs.show();
     movieRecs.show();
+    userSubsetRecs.show();
+    movieSubSetRecs.show();
 
     spark.stop();
   }

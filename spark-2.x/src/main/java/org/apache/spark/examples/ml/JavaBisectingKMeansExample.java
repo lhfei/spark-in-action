@@ -18,15 +18,14 @@
 package org.apache.spark.examples.ml;
 
 // $example on$
-
 import org.apache.spark.ml.clustering.BisectingKMeans;
 import org.apache.spark.ml.clustering.BisectingKMeansModel;
+import org.apache.spark.ml.evaluation.ClusteringEvaluator;
 import org.apache.spark.ml.linalg.Vector;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
-import org.apache.spark.sql.SparkSession;
-
 // $example off$
+import org.apache.spark.sql.SparkSession;
 
 
 /**
@@ -52,9 +51,14 @@ public class JavaBisectingKMeansExample {
     BisectingKMeans bkm = new BisectingKMeans().setK(2).setSeed(1);
     BisectingKMeansModel model = bkm.fit(dataset);
 
-    // Evaluate clustering.
-    double cost = model.computeCost(dataset);
-    System.out.println("Within Set Sum of Squared Errors = " + cost);
+    // Make predictions
+    Dataset<Row> predictions = model.transform(dataset);
+
+    // Evaluate clustering by computing Silhouette score
+    ClusteringEvaluator evaluator = new ClusteringEvaluator();
+
+    double silhouette = evaluator.evaluate(predictions);
+    System.out.println("Silhouette with squared euclidean distance = " + silhouette);
 
     // Shows the result.
     System.out.println("Cluster Centers: ");

@@ -18,12 +18,11 @@
 from __future__ import print_function
 
 from pyspark import SparkContext
-from pyspark.mllib.clustering import StreamingKMeans
+from pyspark.streaming import StreamingContext
 # $example on$
 from pyspark.mllib.linalg import Vectors
 from pyspark.mllib.regression import LabeledPoint
-from pyspark.streaming import StreamingContext
-
+from pyspark.mllib.clustering import StreamingKMeans
 # $example off$
 
 if __name__ == "__main__":

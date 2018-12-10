@@ -19,15 +19,16 @@ package org.apache.spark.examples.mllib;
 
 import org.apache.spark.SparkConf;
 import org.apache.spark.SparkContext;
+
+// $example on$
+import scala.Tuple2;
+
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.mllib.classification.SVMModel;
 import org.apache.spark.mllib.classification.SVMWithSGD;
 import org.apache.spark.mllib.evaluation.BinaryClassificationMetrics;
 import org.apache.spark.mllib.regression.LabeledPoint;
 import org.apache.spark.mllib.util.MLUtils;
-import scala.Tuple2;
-
-// $example on$
 // $example off$
 
 /**

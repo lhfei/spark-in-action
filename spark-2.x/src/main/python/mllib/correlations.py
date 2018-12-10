@@ -27,10 +27,11 @@ from pyspark.mllib.regression import LabeledPoint
 from pyspark.mllib.stat import Statistics
 from pyspark.mllib.util import MLUtils
 
+
 if __name__ == "__main__":
     if len(sys.argv) not in [1, 2]:
         print("Usage: correlations (<file>)", file=sys.stderr)
-        exit(-1)
+        sys.exit(-1)
     sc = SparkContext(appName="PythonCorrelations")
     if len(sys.argv) == 2:
         filepath = sys.argv[1]

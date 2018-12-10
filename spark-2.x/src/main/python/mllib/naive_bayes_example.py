@@ -31,6 +31,7 @@ from pyspark import SparkContext
 from pyspark.mllib.classification import NaiveBayes, NaiveBayesModel
 from pyspark.mllib.util import MLUtils
 
+
 # $example off$
 
 if __name__ == "__main__":

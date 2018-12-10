@@ -22,11 +22,12 @@ import java.io.File
 import java.nio.charset.Charset
 
 import com.google.common.io.Files
+
+import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.broadcast.Broadcast
 import org.apache.spark.rdd.RDD
 import org.apache.spark.streaming.{Seconds, StreamingContext, Time}
 import org.apache.spark.util.{IntParam, LongAccumulator}
-import org.apache.spark.{SparkConf, SparkContext}
 
 /**
  * Use this singleton to get or register a Broadcast variable.
@@ -129,10 +130,10 @@ object RecoverableNetworkWordCount {
           true
         }
       }.collect().mkString("[", ", ", "]")
-      val output = "Counts at time " + time + " " + counts
+      val output = s"Counts at time $time $counts"
       println(output)
-      println("Dropped " + droppedWordsCounter.value + " word(s) totally")
-      println("Appending to " + outputFile.getAbsolutePath)
+      println(s"Dropped ${droppedWordsCounter.value} word(s) totally")
+      println(s"Appending to ${outputFile.getAbsolutePath}")
       Files.append(output + "\n", outputFile, Charset.defaultCharset())
     }
     ssc
@@ -140,7 +141,7 @@ object RecoverableNetworkWordCount {
 
   def main(args: Array[String]) {
     if (args.length != 4) {
-      System.err.println("Your arguments were " + args.mkString("[", ", ", "]"))
+      System.err.println(s"Your arguments were ${args.mkString("[", ", ", "]")}")
       System.err.println(
         """
           |Usage: RecoverableNetworkWordCount <hostname> <port> <checkpoint-directory>

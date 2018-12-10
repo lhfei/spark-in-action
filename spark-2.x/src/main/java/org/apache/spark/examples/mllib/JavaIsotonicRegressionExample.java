@@ -18,18 +18,17 @@ package org.apache.spark.examples.mllib;
 
 // $example on$
 
-import org.apache.spark.SparkConf;
+import scala.Tuple2;
+import scala.Tuple3;
 import org.apache.spark.api.java.JavaPairRDD;
-import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
+import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.mllib.regression.IsotonicRegression;
 import org.apache.spark.mllib.regression.IsotonicRegressionModel;
 import org.apache.spark.mllib.regression.LabeledPoint;
 import org.apache.spark.mllib.util.MLUtils;
-import scala.Tuple2;
-import scala.Tuple3;
-
 // $example off$
+import org.apache.spark.SparkConf;
 
 public class JavaIsotonicRegressionExample {
   public static void main(String[] args) {
